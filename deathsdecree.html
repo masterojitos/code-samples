@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Death Decree</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <style>
+      @font-face {
+          font-family: cinzel_black;
+          src: url("fonts/Cinzel-Black.ttf");
+      }
+      @font-face {
+          font-family: cinzel_bold;
+          src: url("fonts/Cinzel-Bold.ttf");
+      }
+      @font-face {
+          font-family: cinzel_regular;
+          src: url("fonts/Cinzel-Regular.ttf");
+      }
+      body{
+        position: relative;
+      }
+      .slick-dotted.slick-slider{
+        margin-top: 80px;
+      }
+      .carousel-container{
+        position:  relative;
+      }
+      .slider {
+          margin: 75px auto;
+          width: 50%;
+      }
+
+      .slick-slide {
+        background: #1b1c1e;
+        height: 220px;
+        margin: 0px 20px;
+        width: 220px;
+      }
+
+      .slick-slide img, .slick-slide div {
+        border: 2px solid #76757a;
+        color: #fff;
+        font-size: 18px;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .slick-slide div > p{
+        bottom: 0;
+        padding: 0 35px;
+        position: absolute;
+      }
+      .news-slider{
+        max-width: 80%;
+        width: 800px;
+      }
+      .news-slider .slick-list{
+        margin: 0 auto;
+        width: 740px; 
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+          color: #fff;
+      }
+      .news-slider .glyphicon{
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+      }
+      .news-slider .glyphicon.glyphicon-menu-left{
+        left: -30px;
+      }
+      .news-slider .glyphicon.glyphicon-menu-right{
+        right: -30px;
+      }
+
+      /* my code */
+      .scrol-down:hover{
+        cursor: pointer;
+      }
+      .show-carousel a{
+        color: #bfced5;
+        text-decoration: none;
+      }
+      .show-carousel a:hover, .show-carousel a.active{
+        color: #84b3c7;
+        cursor: pointer;
+      }
+      .top-logo{
+        background: url("images/mascara.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: 1000px 350px;
+        height: 300px;
+        margin-top: -2px;
+        padding-bottom: 75px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%
+      }
+      .top-logo img{
+        margin-top: -20px;
+        width: 340px;
+      }
+      .logos-box{
+        margin-bottom: 150px;
+        text-align: center;
+      }
+      .logos-box > div{
+        background: url("images/$_0017_cuadro-features-small.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border: 2px solid #000;
+        display: inline-block;
+        height: 140px;
+        margin: 0 15px 25px 15px;
+        vertical-align: middle;
+        width: 140px;
+      }
+      .logos-box > div.loot img{
+        margin-top: 22px;
+        max-width: 90%;
+        width: 122px;
+      }
+      .logos-box > div.unique img{
+        margin-top: 17px;
+        max-width: 100%;
+        width: 136px;
+      }
+      .logos-box > div:hover{
+        border: 0;
+        padding-top: 2px;
+      }
+      .logos-box > div.loot:hover, .logos-box > div.unique:hover{
+        border: 0;
+        padding-top: -5px;
+      }
+      .logos-box > div:first-child{
+        margin-left: 0;
+      }
+      .logos-box > div:last-child{
+        margin-right: 0;
+      }
+      .logos-box > div > img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 136px;
+      }
+      .images-overlay > div{
+        display: inline-block;
+        height: 35px;
+        text-align: center;
+        padding: 1px 0;
+        position: relative;
+        width: 100px;
+      }
+      .images-overlay > div a{
+        background: transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        display: block;
+        height: 44px;
+        left: 21px;
+        position: absolute;
+        top: -4px;
+        width: 59px;
+      }
+      .images-overlay > div a:hover{
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.3)
+      }
+      .new-big-box{
+        background-image: url("images/$_0011_cuadro-features.png");
+        background-repeat: background-repeat;
+        background-size: 100% 100%;
+        padding: 10px;
+      }
+      .new-big-box > img, .new-big-box > div{
+        display: block;
+        margin: 30px auto; 
+      }
+      .new-big-box > div{
+        min-height: 312px;
+      }
+      .new-big-box > img{
+        max-width: 100%;
+      }
+      .news-box h2{
+        font-family: cinzel_regular;
+        /*margin-top: 300px;*/
+      }
+      .news-box h2, .news-box .news-logos{
+        text-align: center;
+      }
+      .media-box{
+        text-align: center;
+      }
+      .media-box div{
+        background: #1b1c1e;
+      }
+      .media-box ul{
+        display: inline-block;
+        margin: 40px 0;
+        min-height: 50px;
+      }
+      .media-box ul li{
+        border-right: 1px solid #fff;
+        list-style: none;
+        float: left;
+        font-size: 22px;
+        font-weight: 100;
+        padding: 0 25px;
+      }
+      .media-box ul li:last-child{
+        border-right: 0;
+      }
+      .news-box .news-slide{
+        min-height: 400px;
+        width: 100%;
+      }
+      .media-box h2{
+        font-family: cinzel_regular;
+        padding-top: 120px;
+      }
+      .media-box .media-little-box{
+        border: 1px solid #767678;
+        display: inline-block;
+        margin-right: 2.2%;
+        min-height: 190px;
+        width: 23%;
+      }
+      .media-box .media-little-box:last-child{
+        margin-right: 0;
+      }
+      .carousel-container{
+        background-image: url("images/$_0020_fondo-slider.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 7px;
+      }
+      .new-input{
+        background: #000;
+        border: 2px solid #ababab;
+        color: #5d666b;
+        display: inline-block;
+        font-size: 16px;
+        max-width: 100%;
+        padding: 13px 0 13px 15px;
+        vertical-align: middle;
+        width: 475px;
+      }
+      .new-span-button{
+        background-image: url("images/$_0018_fondo-menu.png");
+        background-size: 100% 100%;
+        border: 1px solid #ababab;
+        color: #fff;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 600;
+        height: 52px;
+        margin-left: 2px;
+        padding: 8px 35px;
+        vertical-align: middle;
+      }
+      .new-span-button:hover{
+        cursor: pointer;
+      }
+      .sinopsis-container{
+        text-align: center;
+      }
+      .sinopsis-container > span{
+        display: inline-block;
+        font-size: 36px;
+        font-family: cinzel_regular;
+        margin-right: 15px;
+      }
+      .sinopsis-container > span::first-letter{
+        font-size: 1.4em;
+      }
+      .sinopsis-container > p{
+        color: #bfced5;
+        font-size: 26px;
+        font-weight: 100;
+        margin: 75px 0;
+        padding: 0 35px; 
+      }
+      .new-container{
+        color: #bfced5;
+        padding: 0 24% 250px 24%;
+      }
+      .new-container.background-1, .new-container.background-2, .new-container.background-3, .new-container.background-media, .new-container.background-footer{
+        background-color: #000;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: #bfced5;
+      }
+      .new-container.background-media, .new-container.background-footer{
+        background-size: 100% 100%;
+      }
+      .new-container.background-1{
+        background-image: url("images/background-1.jpg");
+      }
+      .new-container.background-2{
+        background-image: url("images/background-2.jpg");
+      }
+      .new-container.background-3{
+        background-image: url("images/background-3.jpg");
+      }
+      .new-container.background-media{
+        background-image: url("images/bg-media.jpg");
+      }
+      .new-container.background-footer{
+        background-image: url("images/bg-footer.jpg");
+      }
+      .regular-text{
+        font-family: cinzel_regular;
+      }
+      .first-letter::first-letter{
+        font-size: 1.5em;
+      }
+      .new-container .logos .col-lg-3{
+        margin-top: 60px;
+        text-align: center;
+      }
+      .new-container .logos .col-lg-3 img{
+        max-width: 60px;
+      }
+      .new-container .logos .col-lg-3:first-child img{
+        max-width: 160px;
+      }
+      .new-container .navbar-static-top ul{
+        background-image: url("images/$_0018_fondo-menu.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+      }
+      .new-container .navbar-static-top ul li{
+        float: left;
+        vertical-align: middle;
+        width: 20%;
+      }
+      .new-container .navbar-static-top ul li a, .new-container .navbar-static-top ul li.active a{
+        background: transparent;
+        color: #fff;
+        font-family: cinzel_regular;
+        font-size: 17px;
+        padding: 18px 15px;
+        text-align: center;
+      }
+      .new-container .navbar-static-top ul li a:hover, .new-container .navbar-static-top ul li.active a:hover, .new-container .navbar-static-top ul li.active a{
+        background: transparent;
+        color: #84b3c7;
+      }
+      .row.featurette{
+        margin-bottom: 120px;
+      }
+      .row.featurette:last-child{
+        margin-bottom: 0;
+      }
+      .row.featurette span{
+        color: #e9f0f6;
+        display: inline-block;
+        font-size: 27px;
+        font-family: cinzel_regular;
+        margin-bottom: 15px;
+      }
+      .row.featurette p{
+        display: block;
+        font-size: 22px;
+        font-weight: 100;
+        line-height: 1.75;
+      }
+      .h1, .h2, .h3, h1, h2, h3{
+        color: #e9f0f6;
+        margin-top: 0;
+      }
+      .margin-top{
+        margin-top: 180px;
+        padding-top: 20px;
+      }
+      #main-carousel .carousel-inner, #main-carousel.carousel, #main-carousel .carousel-inner .item, #main-carousel .carousel-inner img{
+        max-height: 400px;
+      }
+      .new-container.background-footer{
+        position: relative;
+        padding: 0 25% 160px 25%;
+        text-align: center;
+      }
+      .helper{
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      .sweet-alert{
+        background: #181818;
+      }
+      .sweet-alert .btn-primary, .sweet-alert .btn-primary:active, .sweet-alert .btn-primary:focus{
+        background-color: #000;
+        border-color: #000;
+      }
+      .text-muted{
+        color: #fff;
+      }
+      /* carousel */
+      .carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right, .carousel-control .icon-next, .carousel-control .icon-prev{
+        display: inline-block;
+        font-size: 30px;
+        margin-top: -10px;
+        top: 47%;
+        z-index: 5;
+      }
+      @media (max-width: 1600px){
+        .new-container{
+          padding: 0 18% 250px 18%;
+        }
+      }
+      @media (max-width: 1550px){
+        .top-logo img{
+
+        }
+      }
+      @media (max-width: 1100px){
+        .new-container{
+          padding: 0 15%;
+        }
+        .top-logo{
+          background-position: 52% 0;
+        }
+      }
+      @media (max-width: 800px){
+        .new-container{
+          padding: 0 5%;
+        }
+        .top-logo{
+          background-position: 51.5% 0;
+        }
+        .top-logo img{
+        }
+        .navbar-nav{
+          margin: 0;
+        }
+        .col-md-5.new-big-box{
+          margin-bottom: 15px;
+        }
+        .new-container .navbar-static-top ul li a, .new-container .navbar-static-top ul li.active a{
+          font-size: 12px;
+          padding: 18px 0;
+        }
+        .logos .col-lg-3{
+          display: inline-block;
+          width: 49%;
+        }
+        .new-span-button{
+          margin-top: 10px;
+        }
+        .news-slider .slick-list{
+          width: 220px
+        }
+        .media-box ul{
+          padding: 0;
+        }
+        .media-box ul li{
+          font-size: 15px;
+          padding: 0 15px;
+        }
+        .background-container{
+          background-position: 50% 0;
+          background-size: 200% 5000px;
+        }
+        .sinopsis-container > span{
+          font-size: 30px;
+        }
+        .sinopsis-container > p{
+          font-size: 20px;
+          margin: 30px 0;
+          padding: 0 5px;
+        }
+        .row.featurette span{
+          font-size: 20px;
+          font-weight: 600;
+        }
+        .row.featurette p{
+          font-size: 20px;
+        }
+        .news-box h2, .media-box h2, .margin-top{
+          /*margin-top: 200px;*/
+        }
+        .logos-box > div:first-child, .logos-box > div:last-child{
+          margin: 0 15px 25px 15px;
+        }
+        .logos-box > div{
+          display: none;
+        }
+        .new-container.background-footer{
+          position: relative;
+          padding: 0 0 160px 0;
+          text-align: center;
+        }
+        .carousel-control .icon-prev, .carousel-control .icon-next, 
+        .carousel-control .glyphicon-chevron-left, .carousel-control 
+        .glyphicon-chevron-right, .glyphicon-menu-left, 
+        .carousel-control .glyphicon-menu-left, 
+        .carousel-control .glyphicon-menu-right {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            z-index: 5;
+        }
+        .carousel-control .glyphicon-menu-left {
+            left: 30%;
+        }
+        .carousel-control .glyphicon-menu-right {
+            right: 30%;
+        }
+        h1{
+          font-size: 30px;
+        }
+        h2{
+          font-size: 24px;
+        }
+      }
+      @media (min-width: 1200px){
+        .container{
+          width:  1000px;
+        }
+        .row.featurette .featurette-side.right-side{
+          padding: 50px 0 50px 50px;
+        }
+        .row.featurette .featurette-side.left-side{
+          padding: 50px 50px 50px 0;
+        }
+      }
+    </style>
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body style="padding: 0;">
+    <div class="top-logo">
+      <img src="images/$_0000_logo.png">
+    </div>
+    <div class="new-container background-1" style="padding-top: 235px;padding-bottom: 200px;">
+      <div class="new-container" style="padding: 0; margin-bottom: 25px;">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <ul class="nav navbar-nav">
+            <li><a data-href="#lore" href="#" class="first-letter scrol-down">LORE</a></li>
+            <li><a data-href="#game" href="#" class="first-letter scrol-down">GAME</a></li>
+            <li><a data-href="#news" href="#" class="first-letter scrol-down">NEWS</a></li>
+            <li><a data-href="#media" href="#" class="first-letter scrol-down">MEDIA</a></li>
+            <li><a data-href="#updates" href="#" class="first-letter scrol-down">UPDATES</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Carousel
+      ================================================== -->
+      <div class="carousel-container">
+        <div id="main-carousel" class="carousel slide" data-ride="carousel" style="margin: 0;">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Example headline.</h1>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Another example headline.</h1>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>One more for good measure.</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div><!-- /.carousel -->
+      </div>
+
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <!-- Three columns of text below the carousel -->
+      <div class="row logos" style="padding: 0 5% 100px 5%">
+        <div class="col-lg-3">
+          <img src="images/$_0004_Steam-logo.png" alt="Steam" style="padding-top: 15px;">
+        </div>
+        <div class="col-lg-3">
+          <img src="images/$_0003_PC.png" alt="Pc">
+        </div>
+        <div class="col-lg-3">
+          <img src="images/$_0002_apple-logo.png" alt="Apple">
+        </div>
+        <div class="col-lg-3">
+          <img src="images/$_0001_Linux.png" alt="Linux">
+        </div>
+      </div><!-- /.row -->
+      <!-- START THE FEATURETTES -->
+      <div style="text-align: center;padding-top: 90px;display: block;">
+        <img src="images/$_0005_Q1-2018.png" width="230">
+        <h1 class="first-letter regular-text" style="font-size: 30px;margin-top: 50px;">DO NOT FEAR DEATH'S DECREE FOR YOU</h2>
+        <h2 style="font-size: 26px; font-weight: 100;">remember those who went before you and those who will come after.</h3>
+        <h3 style="margin: 50px 0;font-size: 22px;font-weight: 500;">sirach 41:3-5</h3>
+        <input class="new-input" type="text" placeholder="Sign up to receive development updates and beta invites...">
+        <span class="new-span-button">Sign Up</span>
+        <div style="font-size: 15px; margin: 25px 0 0 0;" class="images-overlay">
+          <span>We will never share your email, and we only email out important updates.</span>
+          <br/><br/><br/>
+          <div>
+            <img style="width: 19px; height: 34px;" src="images/$_0007_facebook-.png">
+            <a class="overlay" href="https://www.facebook.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 35px; height: 34px;" src="images/$_0010_instagram-.png">
+            <a class="overlay" href="https://www.instagram.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 44px; height: 34px;" src="images/$_0009_twiter.png">
+            <a class="overlay" href="https://twitter.com/deathsdecree" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 49px; height: 34px;" src="images/$_0008_youtube-.png">
+            <a class="overlay" href="javascript:void(0)"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="new-container background-2" style="padding-bottom: 130px;">
+      <div class="sinopsis-container" id ="lore">
+        <span>WELCOME </span><span>TO </span><span>THE </span><span>UNDERWORLD</span>
+        <p>Perhaps some should fear death's decree....after all, the living kingdom is filled with wrong doers, sinners and tyrants who might be wise to fear death's jugment. Emperors like beilus, Lord of the Eastern Domains, a disfigured tyrant who hided behind an iconic mask...and of whom stories abound filled with torture, avarice slaughter and betrayal. All for control, and power, over his domain...in a merely temporary realm. But tyranny doesn't last forever, and Beilus' story is no different. Death's Decree follows the story of Beilus as he delves deep into the journey will be his afterlife.</p>
+      </div>
+      <div class="logos-box">
+        <div data-href="#game" class="scrol-down"><img src="images/$_0015_1-small.png" style="margin-top: 15px;"></div>
+        <div data-href="#skill" class="scrol-down"><img src="images/$_0014_2-small.png" style="margin-top: 15px;"></div>
+        <div data-href="#unique" class="scrol-down unique"><img src="images/door.png" style="width: 70px;"></div>
+        <div data-href="#loot" class="scrol-down loot"><img class="" src="images/weapons.png"></div>
+        <div data-href="#challenges" class="scrol-down"><img src="images/$_0016_5-small.png" style="margin-top: 8px;"></div>
+      </div>
+      <div class="row featurette" id="game" style="padding-top: 30px;">
+        <div class="col-md-5 new-big-box">
+          <img class="featurette-image img-responsive center-block first-block" src="images/$_0019_1.png">
+        </div>
+        <div class="col-md-7 featurette-side right-side">
+          <span class="first-letter">TALES FROM THE ARTERLIFE</span>
+          <p class="">Death's Decree undcovers the story of the afterlife as seen by the eyes of a fallen, tyrannical, emperor. 
+          Death's Decree is filled with lore, myths, and secrets about the afterlife that awaits us all...</p>
+        </div>
+      </div>
+      <div class="row featurette" id="skill">
+        <div class="col-md-5 col-md-push-7 new-big-box">
+          <img class="featurette-image img-responsive center-block" src="images/$_0013_2.png">
+        </div>
+        <div class="col-md-7 col-md-pull-5 featurette-side left-side">
+          <span class="first-letter" style="margin-right: 10px;">SKILL-BASED </span><span class="first-letter"> COMBAT</span>
+          <p class="">Experience pattern-based 2D combat as never seen before. Death's Decree is a challenging sidescrolling 2D game that focuses on timing, strategy, reflexes and the right equpment and build customization.</p>
+        </div>
+      </div>
+      <div class="row featurette" id="unique">
+        <div class="col-md-5 new-big-box" style="">
+          <div style="text-align: center; display: grid; margin-top: 10px;">
+            <span class="helper"></span>
+            <img style="display: inline-block; vertical-align: middle; width: 200px;" class="featurette-image img-responsive center-block" src="images/door.png">
+          </div>
+        </div>
+        <div class="col-md-7 featurette-side right-side">
+          <span class="first-letter" style="margin-right: 10px;">UNIQUE </span><span class="first-letter">2.</span><span class="first-letter">5</span><span class="first-letter" style="margin-right: 10px;">D</span><span class="first-letter" style="margin-right: 10px;">OPEN</span><span class="first-letter">WORLD</span>
+          <p class="">Experience a gothic world filled with hand-draw art.
+          Explore a non-linear world filled with secret rooms, chambers, loot, epic bosses, and more at your own pace and following your own path.</p>
+        </div>
+      </div>
+      <div class="row featurette" id="loot">
+        <div class="col-md-5 col-md-push-7 new-big-box">
+          <div>
+            <span class="helper"></span>
+            <img style="display: inline-block; vertical-align: middle;" class="featurette-image img-responsive center-block" src="images/weapons.png">
+          </div>
+        </div>
+        <div class="col-md-7 col-md-pull-5 featurette-side left-side">
+          <span class="first-letter" style="margin-right: 10px;">LOOT AND </span><span class="first-letter"> CRAFTING</span>
+          <p class="">Loot armor, weapons, ingredients, and materials from bosses interactive objects, hordes, and moew.
+          collect items of lore and dive deep into an easy-tolearn, but deep, crafting system.</p>
+        </div>
+      </div>
+      <div class="row featurette" id="challenges">
+        <div class="col-md-5 new-big-box" style="margin-top: 35px;">
+          <img class="featurette-image img-responsive center-block" src="images/$_0012_5.png" style="padding-top: 0; margin-top: 0;">
+        </div>
+        <div class="col-md-7 featurette-side right-side">
+          <span class="first-letter" style="margin-right: 10px;">CHALLENGES, </span><span class="first-letter" style="margin-right: 10px;">SECRETS, AND </span><span class="first-letter" style="margin-right: 10px;">MORE</span>
+          <p class="">Explore and underworld temple filled with secret areas, passages, torture chambers, and more. 
+          Death's Decreee is a world filled with adventures that range from casual loot farming to deep and challenging expeditions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="new-container background-media" id="news" style="padding: 150px 0;">
+      <div class="news-box">
+        <h2 class="first-letter">NEWS</h2>
+        <section class="regular slider news-slider">
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              Finished adding new animations for Vestel and Maradin! <br/><br/>
+              june 13, 2017</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              The Closed Beta is Coming! <br/><br/>
+              june 11, 2017</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              We added 3 new heroes! <br/><br/>
+              june 13, 2017</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              Finished adding new animations for Vestel and Maradin! <br/><br/>
+              june 13, 2017</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              The Closed Beta is Coming! <br/><br/>
+              june 11, 2017</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Dev Update: <br/>
+              We added 3 new heroes! <br/><br/>
+              june 13, 2017</p>
+            </div>
+          </div>
+        </section>
+        <div class="news-logos images-overlay" style="margin-top: 110px;">
+          <div>
+            <img style="width: 19px; height: 34px;" src="images/$_0007_facebook-.png">
+            <a class="overlay" href="https://www.facebook.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 35px; height: 34px;" src="images/$_0010_instagram-.png">
+            <a class="overlay" href="https://www.instagram.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 44px; height: 34px;" src="images/$_0009_twiter.png">
+            <a class="overlay" href="https://twitter.com/deathsdecree" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 49px; height: 34px;" src="images/$_0008_youtube-.png">
+            <a class="overlay" href="javascript:void(0)"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="new-container background-3" style="padding-bottom: 0;">
+      <div class="media-box" id="media">
+        <h2 class="first-letter">Media</h2>
+        <ul>
+          <li class="show-carousel"><a class="active" data-target="artwork-carousel" href="">Artwork</a></li>
+          <li class="show-carousel"><a data-target="screenshots-carousel" href="">Screenshots</a></li>
+          <li class="show-carousel"><a data-target="promotional-carousel" href="">Promotional</a></li>
+        </ul>
+
+        <div class="carousel-container artwork-carousel-container footer-carousel-container">
+          <div id="artwork-carousel" class="carousel slide" data-ride="carousel" style="margin: 0;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#artwork-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#artwork-carousel" data-slide-to="1"></li>
+              <li data-target="#artwork-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Artwork headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Artwork example headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Artwork One more for good measure.</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#artwork-carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#artwork-carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div><!-- /.carousel -->
+        </div>
+
+        <div class="carousel-container screenshots-carousel-container footer-carousel-container" style="display: none;">
+          <div id="screenshots-carousel" class="carousel slide" data-ride="carousel" style="margin: 0;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#screenshots-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#screenshots-carousel" data-slide-to="1"></li>
+              <li data-target="#screenshots-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Screenshots Example headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Screenshots Another example headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Screenshots One more for good measure.</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#screenshots-carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#screenshots-carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div><!-- /.carousel -->
+        </div>
+
+        <div class="carousel-container promotional-carousel-container footer-carousel-container" style="display: none;">
+          <div id="promotional-carousel" class="carousel slide" data-ride="carousel" style="margin: 0;">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#promotional-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#promotional-carousel" data-slide-to="1"></li>
+              <li data-target="#promotional-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Promotional headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Promotional example headline.</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Promotional One more for good measure.</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#promotional-carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#promotional-carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div><!-- /.carousel -->
+        </div>
+        <!-- <div style="width: 100%; height: 500px; border: 1px solid #767678; margin-bottom: 20px;"></div>
+        <div class="media-little-box"></div>
+        <div class="media-little-box"></div>
+        <div class="media-little-box"></div>
+        <div class="media-little-box"></div> -->
+      </div>
+      <div id="updates" class="margin-top" style="text-align: center;display: block;">
+        <img src="images/$_0005_Q1-2018.png" width="230">
+        <h1 class="first-letter regular-text" style="font-size: 30px;margin-top: 40px;">DO NOT FEAR DEATH'S DECREE FOR YOU</h2>
+        <h2 style="font-size: 26px; font-weight: 100;">remember those who went before you and those who will come after.</h3>
+        <h3 style="margin: 50px 0;font-size: 22px;font-weight: 500;">sirach 41:3-5</h3>
+        <input class="new-input" type="text" placeholder="Sign up to receive development updates and beta invites...">
+        <span class="new-span-button">Sign Up</span>
+        <div style="font-size: 15px; margin: 25px 0 0 0;" class="images-overlay">
+          <span style="display: block;">We will never share your email, and we only email out important updates.</span>
+          <div style="margin-top: 150px; display: block;"></div>
+          <div>
+            <img style="width: 19px; height: 34px;" src="images/$_0007_facebook-.png">
+            <a class="overlay" href="https://www.facebook.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 35px; height: 34px;" src="images/$_0010_instagram-.png">
+            <a class="overlay" href="https://www.instagram.com/deathsdecree/" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 44px; height: 34px;" src="images/$_0009_twiter.png">
+            <a class="overlay" href="https://twitter.com/deathsdecree" target="_blank"></a>
+          </div>
+          <div>
+            <img style="width: 49px; height: 34px;" src="images/$_0008_youtube-.png">
+            <a class="overlay" href="javascript:void(0)"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="new-container background-footer">
+      <img style="margin: 50px 0 100px 0; width: 245px;" src="images/$_0006_logo-footer.png">
+      <div style="font-size: 16px;position: absolute;bottom: 30px;width: 100%;left: 0;text-align: center;">©2017 LITTLE BIG DOG, ALL RIGHTS RESERVERD.</div>
+    </div>
+
+
+    </div><!-- /.container -->
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(document).on("click", ".scrol-down", function(ev){
+        ev.preventDefault();
+        var $this = $(this);
+        $('html, body').animate({
+          scrollTop: $($this.attr("data-href")).offset().top - 20
+        }, 1000, function(){
+         // window.location.hash = hash;
+        });
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        variableWidth: true,
+        nextArrow: '<i class="glyphicon glyphicon-menu-right"></i>',
+        prevArrow: '<i class="glyphicon glyphicon-menu-left"></i>'
+      });
+      $(document).on("click", ".show-carousel a", function(ev){
+        ev.preventDefault();
+        $(".show-carousel a.active").removeClass("active");
+        $(this).addClass("active");
+        $(".footer-carousel-container").hide();
+        $("." + $(this).attr("data-target") + "-container").show();
+      });
+      $(".slick-dots").remove();
+      $('.new-span-button').on('click', function (e) {
+        e.preventDefault();
+        var email = $(this).prev();
+        if(email.val().length > 0 && email.val().indexOf("@") >= 0){
+          $.ajax({
+              type: 'POST',
+              url: 'subscribe.php',
+              data: {email: email.val().trim()}
+          }).done(function (response) {
+              if (response != '') {
+                  if (response == 1) swal("All done!!", "Thanks for subscribing, we will be in touch soon!!", "success");
+                  else {
+                      swal({
+                          title: "Oops!",
+                          text: "Your email address is already subscribed. Thank you.",
+                          type: "error",
+                          confirmButtonText: "OK"
+                      });
+                  }
+              }
+              email.val('');
+          }).fail(function (errMsg) {
+              var message = errMsg.responseJSON && errMsg.responseJSON.message ? errMsg.responseJSON.message : 'Something went wrogn\'t, please try it again later.'
+              swal({
+                  title: "Oops!",
+                  text: message,
+                  type: "error",
+                  confirmButtonText: "OK"
+              });
+          }); 
+        }else{
+          var message = 'Please enter a valid email.';
+          swal({
+              title: "",
+              text: message,
+              type: "error",
+              confirmButtonText: "OK",
+          });
+        }
+      });
+    });
+  </script>
+  </body>
+</html>

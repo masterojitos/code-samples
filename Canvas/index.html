@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pets Hunter</title>
+    <meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+    body {
+      margin: 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    canvas {
+      margin: 0 auto;
+    }
+    .ranking {
+      position: absolute;
+      right: 50px;
+      top: 50px;
+    }
+    .ranking h3 {
+      font-size: 1.5em;
+      margin: 0;
+      text-decoration: underline;
+    }
+    .ranking span {
+      display: block;
+      font-size: 1em;
+      margin: 5px 0;
+      text-align: right;
+    }
+    .support-message {
+      font-size: 2em;
+      height: 80px;
+      left: 50%;
+      margin-left: -160px;
+      margin-top: -40px;
+      position: absolute;
+      top: 50%;
+      width: 320px;
+    }
+    .hide {
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>

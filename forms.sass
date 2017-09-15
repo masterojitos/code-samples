@@ -1,0 +1,464 @@
+.form-light
+    [class*='button-']
+        display: block 
+        color: #fff
+        text-align: center
+        padding:  .9em
+        margin: .4em 0
+    fieldset
+        padding: 0
+        legend
+            padding: 0.75em 0
+.button-linkdln
+    background-color: $linkdln
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.35)
+.button-facebook
+    background-color: $facebook
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.35)
+
+p[name="defaultFacility"]
+    background: #fff
+    border-bottom: 1px solid $gray
+    height: 50px
+    line-height: 50px
+    padding: 0 15px
+    overflow: hidden
+    & + p
+        input
+            position: relative
+            top: -50px
+.pm-autocomplete
+    padding: 0
+    input[type="search"],
+    .remove-autocomplete,
+    p[name="defaultFacility"]
+        background: #fff
+        height: 50px
+        line-height: 1
+    .remove-autocomplete
+        color: #666
+        line-height: 50px
+        margin: 0
+        padding: 0
+    .pm-results li
+        line-height: 2.5em
+        padding: 0 .5em
+
+.emulate-input a
+    color: #888
+
+form
+    input[type="number"]
+        text-align: right
+        padding-right: .5em
+    fieldset
+        border: none
+        //border-top: 2px solid $stable
+        p
+            margin: 0
+            input[type="text"],
+            input[type="email"],
+            input[type="password"]
+                //border-bottom: 1px solid $gray
+                height: 40px
+            &:first-of-type
+                input[type="text"],
+                input[type="email"],
+                input[type="password"]
+                    border-top: 1px solid $gray
+
+        .emulate-input
+            background: #fff
+            border-bottom: 1px solid $gray
+            color: #999
+            display: block
+            height: 50px
+            line-height: 50px
+            padding: 0 1em
+            &.activated
+                background-color: #e1e1e1
+            &.ng-binding
+                color: #000
+
+        .sign-msg
+            color: $labelColor
+            font-size: 1.2em 
+            padding: .5em
+            padding-top: 1em
+            text-align: center
+            & + .sign-msg
+                padding-top: 0
+            &.small
+                font-size: .9em
+                line-height: 1.1em
+            a
+                color: $positive
+                font-weight: bold
+
+    &.form-light
+        legend
+            border: none
+            color: $labelColor
+            font-size: .72em
+            line-height: 45px
+            padding: 0 .5em
+            position: relative
+            text-align: center
+            text-transform: uppercase
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5)
+            width: 100%
+            height: 45px
+            z-index: 1
+            &:before
+                background: $separatorColor
+                box-shadow: 1px 1px 0 rgba(255,255,255,0.5)
+                content: ''
+                display: block
+                height: 1px
+                position: absolute
+                top: 20px
+                right: 15px
+                left: 15px
+                z-index: -2
+            &:after
+                background: $light
+                content: ''
+                display: block
+                margin-left: -45px
+                position: absolute
+                top: 10px
+                left: 50%
+                width: 90px
+                height: 25px
+                z-index: -1
+    
+    
+            
+    p:first-child
+        margin-top: 0
+    .radio
+        margin: 0 0.5em 0 0
+        color: #444
+        input[type=radio]
+            display: none
+            + label
+                vertical-align: middle
+                &:before
+                    background: #fff
+                    border-radius: 1em
+                    content: ' '
+                    display: inline-block
+                    margin: -.5em .2em 0 1em
+                    vertical-align: middle
+                    width: 2em
+                    height: 2em
+        input[type=radio]:first-child + label:before
+            margin-left: 0 
+        input[type=radio]:checked
+            + label
+                &:before
+                    border: .45em solid #fff
+                    background: #555
+    input.ng-invalid.ng-dirty, input[class*='ng-invalid']
+        background-color: #FA787E
+        &.ng-pristine
+            background: #fff
+    .ng-invalid-required:after
+        content: '(*)'
+        display: inline-block
+        width: 2em
+        height: 1.5em
+input, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], textarea, select
+    padding: 0 .5em
+    border: none
+    -webkit-appearance: none
+    border-radius: 0
+    height: 2.2em
+    background: #fff
+input[type="time"] + input[type="time"]
+    padding-right: 2em
+    box-sizing: border-box
+    &:before
+        content: 'to '
+        float: left
+        margin-right: 1em
+
+input[type='date'],select
+    &:before
+        content: '\f171'
+        font-family: "Ionicons"
+        float: right
+        display: inline-block
+        height: 1em
+        width: 1em
+input[type='date']
+    &:before
+        content: '\f162'
+select, body select
+    background: #fff url('../img/icons/arrow-down-b.png') no-repeat calc(100% - .4em) center
+    background: #fff url('../img/icons/arrow-down-b.png') no-repeat -webkit-calc(100% - .4em) center
+    background-size: 16px
+    padding-right: 2em
+textarea
+    padding: .5em
+    height: auto
+
+select[disabled]
+    background: #fff
+
+output
+    font-size: .7em
+    margin-left: 1em
+.form-1
+    color: $stable
+    label, .label
+        color: $gray2
+        font-weight: 500
+    .font-stable, &.font-stable
+        color: $stable
+        .button
+            color: #fff
+    output
+        font-size: 0.8em
+        text-transform: uppercase
+        vertical-align: sub
+    select
+        width: 100%
+        background-color: #fff
+    input[type=text],input[type=number],input[type=date]
+        padding: .5em
+    p
+        margin-bottom: 1em
+        color: $gray2
+    label + p
+        margin-top: 0.4em
+
+    .checkbox, .checkbox-icon
+        input
+            display: inline-block
+            vertical-align: text-bottom
+            &:before
+                width: 2em
+                height: 2em
+                left: -.6em
+                position: relative
+            &:after
+                top: .7em
+                left: .5em
+
+    .money:before
+        content: '\$'
+        display: inline-block
+        width: 1em
+        height: 1em
+        color: $light
+    .radio-list p
+        margin-bottom: .8em
+    button.clear
+        margin-bottom: 0
+    input
+        padding-left: .5em
+        box-sizing: border-box
+    input[type="range"]
+        width: calc(100% - 5em)
+        width: -webkit-calc(100% - 5em)
+        vertical-align: middle
+.form-2
+    color: $stable
+    .font-stable
+        label, a
+            color: $stable
+    input
+        padding: 0.5em
+        & + label
+            display: inline-block
+            margin: 0 .8em 0 .2em
+    label
+        display: block
+        color: $stable
+    input[type="range"]
+        width: calc(100% - 5em)
+        width: -webkit-calc(100% - 5em)
+        vertical-align: middle
+    input[type=radio]
+        font-size: 1.2em
+        width: 2em
+        height: 2em
+        vertical-align: middle
+    select
+        background-color: #fff
+        color: #444
+        width: 100%
+        padding: 0.45em
+        border: none
+    a
+        color: $positive
+        text-decoration: none
+    .row
+        padding: 0
+        input
+            margin-right: .5em
+            &:last-child
+                margin-right: 0
+.form-3
+    @extend .form-2
+    input, select
+        padding: 0 .5em
+.checkbox-1
+    input[type=checkbox] 
+        display: none 
+    label
+        display: inline-block 
+        cursor: pointer
+        position: relative
+        &:before
+            content: ''
+            display: inline-block
+            height: 1.5em
+            width: 1.5em
+            background-color: #fff
+            vertical-align: bottom
+            margin-right: .2em
+    .col
+        padding: .5em 0
+    input[type=checkbox]:checked + label:before
+        content: ''
+        display: inline-block
+        height: 1.5em
+        width: 1.5em
+        background-color: $gray4
+        border: solid .3em #fff
+
+.link-input
+    background: #fff
+    display: inline-block
+    padding: .5em
+    color: $gray2
+    &:after
+        font-family: "Ionicons"
+        content: '\f152'
+        float: right
+
+/* Modal box (popup) */
+.popup
+    background: #fff !important
+    color: #333
+    border-radius: 4px !important
+    width: 80vw
+    .popup-head
+        border-bottom: none
+        padding: 10px 0px
+    .popup-title
+        font: normal 1.4em 'brandon_grotesque'
+        color: $gray2
+    .popup-body
+        text-align: center
+        min-height: 12vh
+        .popup-form
+            label,
+            input
+                vertical-align: middle
+            label
+                font-size: 12px
+            input[type="checkbox"]
+                -webkit-appearance: checkbox
+                height: auto
+                padding: 0
+    .popup-buttons
+        border-top: 1px solid #ddd
+        padding: 0
+        min-height: 0
+        .button,
+        .button.button-light
+            border: none
+            border-radius: 0
+            box-shadow: none
+            color: #888
+            font-size: 0.75em 
+            height: 4em
+            line-height: 1.2em
+            margin-right: 0
+            min-height: 0
+            text-transform: uppercase
+            &:first-of-type
+                border-right: 1px solid #ddd
+                -webkit-border-bottom-left-radius:  4px
+                border-bottom-left-radius:          4px
+            &:last-of-type
+                border-right: 1px solid #ddd
+                -webkit-border-bottom-right-radius:  4px
+                border-bottom-right-radius:          4px
+            &.activated
+                background: #eee
+    input
+        padding: 0 0.5em
+
+
+input[type="checkbox"].check-toggle
+    border-radius: 19px
+    background: #c6ccd1
+    cursor: pointer
+    display: block
+    font-size: 16px
+    font-weight: 400
+    height: 38px
+    outline: none
+    padding: 0 14px
+    position: relative
+    text-align: right
+    width: 80px
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    -o-appearance: none
+    appearance: none
+    -webkit-transition: all 0.3s ease-in-out
+    -moz-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+    &:before
+        background: #fff
+        border-radius: 15px
+        content: ''
+        height: 30px
+        position: absolute
+        top: 4px
+        left: 5px
+        width: 30px
+        -webkit-transition: all 0.3s ease-in-out
+        -moz-transition: all 0.3s ease-in-out
+        transition: all 0.3s ease-in-out
+    &:after 
+        color: #fff
+        content: 'Off'
+        line-height: 38px
+    &:checked
+        background: #35a898
+        text-align: left
+        &:before
+            left: 45px
+        &:after
+            content: 'On'
+
+.input-icon
+    position: relative
+    &:before
+        background-size: 100%
+        background-repeat: no-repeat
+        content: ''
+        display: block
+        position: absolute
+        top: 10px
+        right: 15px
+        width: 24px
+        height: 24px
+    &.input-date
+        &:before
+            background-image: url(../img/icons/calendar-day.png)
+
+
+
+
+
+
+
+

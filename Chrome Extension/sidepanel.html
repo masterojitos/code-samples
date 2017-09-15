@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/nprogress.min.css">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/fullview.css">
+  </head>
+  <body class="theme-default menu-iconbar mode-box-shadow mode-superclean">    
+    <div class="datahunter">
+      <div class="modal-dialog" role="document">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title"><img src="/images/logo-dark.png" alt="FulVliew" width="150" /></h4>
+        </div>
+        <div class="modal-body">
+          <div class="datahunter-name">
+            <button type="button" class="btn btn-sm datahunter-cancel"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" class="btn btn-sm datahunter-ok"><i class="glyphicon glyphicon-ok"></i></button>
+            <label>Name: <span></span></label>
+            <input type="text" class="form-control" placeholder="You must enter the full name" />
+            <button type="button" class="btn btn-sm datahunter-change">Change</button>
+          </div>
+          <div class="datahunter-company">
+            <button type="button" class="btn btn-sm datahunter-cancel"><i class="glyphicon glyphicon-remove"></i></button>
+            <button type="button" class="btn btn-sm datahunter-ok"><i class="glyphicon glyphicon-ok"></i></button>
+            <label>Company: <span></span></label>
+            <input type="text" class="form-control" placeholder="You must enter at least 3 characters" />
+            <button type="button" class="btn btn-sm datahunter-change">Change</button>
+          </div>
+          <div class="datahunter-email"></div>
+          <div class="datahunter-confidence">
+            <div class="datahunter-confidence-value"></div>
+            <div class="datahunter-confidence-bar">
+              <div></div>
+            </div>
+          </div>
+          <div class="datahunter-message"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg datahunter-close">Close</button>
+          <button type="button" class="btn btn-primary btn-lg datahunter-submit" disabled>Search</button>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.md5.min.js"></script>
+    <script src="/js/nprogress.min.js"></script>
+    <script src="/js/fullview.js"></script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<div class="page-profile body-for-header-absolute" ng-init="updateMetaData('Profile — Skill Club');mixpanelTrack('View Profile');">
+    <!--Panel Header Menu -->
+    <panel-header></panel-header>
+    <!--Panel Header Menu -->
+
+    <section class="body-content" ng-controller="profileController">
+        <!-- <section class="content-wrapper clear"> -->
+
+        <section class="block-user">
+            <section class="content-wrapper clear">
+                <div class="photo trigger-photo-upload" style="background-image: url({{user.photo}})">
+                    <img ng-src="{{ user.photo }}" class="header-avatar"/>
+                </div>
+                <h2 class="text-center" ng-bind="user.name"></h2>
+                <textarea id="bio-info" ng-model="user.bio" ng-maxlength="139"
+                          placeholder="Share a little bit about yourself..." spellcheck="false"
+                          ng-keyup="$event.keyCode == 13 && bioSubmit()" maxlength="140" msd-elastic></textarea>
+                <p class="length">You can use up to 140 characters for your bio.</p>
+                <div class="form-upload-avatar">
+                    <input type="file" id="file-upload-button" file-model="myFile"/>
+                </div>
+                <!--<div class="text-center">
+                    <a ui-sref="userProfile({username:user.username})" class="btn btn-primary btn-skillclub-form">View profile as</a>
+                </div>-->
+            </section>
+        </section>
+
+        <section class="body-content content-page-item-detail content-circle-detail">
+            <!--start: New Tabs-->
+            <tabset justified="true">
+
+                <tab heading="Skills">
+                    <section class="content-wrapper clear" ng-init="getMyAllSkills()" on-size-changed="logResize">
+                        <section class="block-circle" ng-init="getSkillsTop()">
+                            <div class="content my-skill-content">
+                                <h3>
+                                    <img class="st" src="images/skillTrained.png">
+                                    Skills Trained
+
+                                    <span class="my-skills-buttons" >
+                                        <a ng-click="addSkills(getSkills)"><img src="images/addSkills.png" /> Add Skills</a>
+                                        <a ng-click="importContent()"><img src="images/addSkills.png" /> Import Content</a>
+                                    </span>
+
+                                </h3>
+
+                                <div class="my-skills-grid" ng-show="skillactive" >
+
+                                    <div class="row">
+                                        <div class="col-sm-12 my-skills-row" ng-repeat="(value, item) in skills | orderBy:'-score'">
+                                            <progressbar max="max" value="item.score" ng-click="getResourceBySkill(item.skill._id)">
+                                                <span class="my-skills-texts">{{item.skill.name}}</span>
+                                                <span class="my-skills-points">{{item.score}} XP</span>
+                                            </progressbar>
+
+                                            <div class="{{item.skill._id}}-resource my-skills-hide">
+                                                <span class="my-skills-trt"></span>
+                                                <div class="block-intro" ng-show="!collection.chaptered">
+
+                                                    <section ng-controller="listResourceController" class="content-list-resource clear">
+                                                        <article class="col-xs-12 col-sm-6 col-md-4" ng-repeat="resource in listChapter | startFrom:currentPage*pageSize | limitTo:pageSize " ng-controller="tooltipUserDetailController">
+                                                            <header>
+                                                                <a href="{{resource.url}}" target="_blank" style="color: black;" ng-click="open(resource.title, '', $event, resource._id, $index, resource.contributed_by, resource.total_likes, trackDetail.name, listChapter, false);">
+                                                                    <img src="{{resource.image}}" alt="{{resource.title}}" imagesize />
+                                                                    <img src="images/resource-layer.png" />
+                                                                    <img src="images/resource-shadow.png" />
+                                                                </a>
+                                                                <div ng-controller="listReportController" class="pull-left" style="position: relative;">
+                                                                    <a href="javascript:void(0);" class="btn-tooltip glyphicon glyphicon-option-horizontal" ng-click="_setTooltipVisible($event);"></a>
+                                                                    <div class="tooltip-content-list tooltip-content-plus clear pull-hide">
+                                                                        <ul class="list list-vertical tooltip-list">
+                                                                            <li class="clear lucy" ng-if="isAuthenticated()">
+                                                                                <div class="pull-left">
+                                                                                    <img src="images/lucy_80x80.png" alt="">
+                                                                                </div>
+                                                                                <div class="pull-left dialog">
+                                                                                    How can I help?
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#" class="resource-bookmark" ng-click="openFindCollectionModal($event, resource)">Collect</a>
+                                                                            </li>
+                                                                            <li ng-if="!resource.queue">
+                                                                                <a href="#" class="resource-queue action-addtoqueue-{{resource._id}}" ng-click="resourceQueue($event, resource.title, resource._id)" ng-if="resource.status != 'completed'">Add to Queue</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#" ng-click="openShareResource($event, resource)">Share</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#" ng-click="openReportResource($event, resource)">Report</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <a id="{{resource._id}}" href="#" class="pull-right btn-like" ng-class="{liked: resource.liked}" ng-click="likeResource($index, resource.title, resource._id)" ng-bind="resource.total_likes"></a>
+                                                                <a href="{{resource.url}}" target="_blank" style="color: black;" ng-click="open(resource.title, '', $event, resource._id, $index, resource.contributed_by, resource.total_likes, trackDetail.name, listChapter, false);">
+                                                                    <h3 ng-bind="resource.title"></h3>
+                                                                </a>
+                                                            </header>
+                                                            <div ng-controller="listReportController" class="header-source pull-left" ng-repeat="source in resource.sources | limitTo: 1 track by $index">
+                                                                <a href="/source/{{source.slug}}" ng-click="_setTooltipVisible($event);" ng-mouseover="_setTooltipVisible($event, 'over');" ng-mouseout="_setTooltipVisible($event, 'out');">
+                                                                    <span class="btn-source-image" style="background-image: url({{ source.photo ? source.photo : '/images/default-user.png'}});"></span>
+                                                                </a>
+                                                                <div class="tooltip-content-list tooltip-content-plus tooltip-bio-list tooltip-source-list only_mobile pull-hide" ng-mouseover="_setTooltipBioVisible($event, 'over');" ng-mouseout="_setTooltipBioVisible($event, 'out');"><div></div>
+                                                                    <ul class="list list-vertical tooltip-list">
+                                                                        <li>
+                                                                            <h2 class="tooltip-bio-title"><a ui-sref="source({slug: source.slug})" ng-click="mixpanelTrack('Page: Source Detail', {provider: source.name, origin: 'collection'});">{{source.name | limitTo: 18}}{{source.name.length <= 18 ? '' : '...'}}</a></h2>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a ui-sref="source({slug: source.slug})" ng-click="mixpanelTrack('Page: Source Detail', {provider: source.name, origin: 'collection'});">
+                                                                                <div class="image-background-center size75" style="background-image: url('{{source.photo?source.photo:'/images/default-user.png'}}')" ></div>
+                                                                            </a>
+                                                                            <a target="_blank" href="https://twitter.com/{{source.twitter}}" ng-if="source.twitter" class="twitter-icon">
+                                                                                <img src="/images/twittericon.png" alt="Twitter" width="24" height="24" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li ng-if="source.description"><span class="hr"></span></li>
+                                                                        <li ng-if="source.description" ng-bind="source.description" class="tooltip-bio-description"></li>
+                                                                        <li class="btns">
+                                                                            <a href="#" class="btn btn-follow not-hide-tooltip {{source._id}}" ng-class="sources && sources.indexOf(source._id) != '-1' ? 'following' : ''" ng-click="followSource($event, source)">
+                                                                                <span class="follow-text" ng-bind="sources && sources.indexOf(source._id) != '-1' ? 'following' : 'follow'"></span>
+                                                                                <img src="/images/checkmarkIcon.png" width="13" height="9" ng-show="sources && sources.indexOf(source._id) != '-1'" />
+                                                                            </a>
+                                                                            <a ui-sref="source({slug: source.slug})" ng-click="mixpanelTrack('Page: Source Detail', {provider: source.name, origin: 'collection'});" class="btn btn-go">&nbsp;</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="body">
+                                                                <div class="features" ng-controller="listReportController" style="position: relative;">
+                                                                    <a href="/provider/{{resource.provider.slug}}" style="color: black;" ng-click="_setTooltipVisible($event);" ng-mouseover="_setTooltipVisible($event, 'over');" ng-mouseout="_setTooltipVisible($event, 'out');">
+                                                                        <figure ng-if="resource.provider.logo">
+                                                                            <img src="{{_apiurl}}{{resource.provider.logo}}" alt="{{resource.provider.name}}" title="{{resource.provider.name}}" />
+                                                                        </figure>
+                                                                        <span ng-if="!resource.provider.logo && resource.provider.name.length < 20" ng-bind="resource.provider.name" style="font-size: .8em; width: 125%; display: inline-block;"></span>
+                                                                        <span ng-if="!resource.provider.logo && resource.provider.name.length > 20" ng-bind="resource.provider.name" style="font-size: .6em; width: 125%; display: inline-block;"></span>
+                                                                    </a>
+                                                                    <div class="tooltip-content-list tooltip-content-plus tooltip-bio-list only_mobile pull-hide" ng-mouseover="_setTooltipBioVisible($event, 'over');" ng-mouseout="_setTooltipBioVisible($event, 'out');">
+                                                                        <ul class="list list-vertical tooltip-list">
+                                                                            <li>
+                                                                                <h2 class="tooltip-bio-title"><a ui-sref="provider({slug: resource.provider.slug})" ng-click="mixpanelTrack('Page: Provider Detail', {provider: resource.provider.name, origin: 'collection'});" ng-bind="resource.provider.name"></a></h2>
+                                                                            </li>
+                                                                            <li ng-if="resource.provider.logo">
+                                                                                <a ui-sref="provider({slug: resource.provider.slug})" ng-click="mixpanelTrack('Page: Provider Detail', {provider: resource.provider.name, origin: 'collection'});">
+                                                                                    <figure>
+                                                                                        <img src="{{_apiurl}}{{resource.provider.logo}}" alt="{{resource.provider.name}}" title="{{resource.provider.name}}" />
+                                                                                    </figure>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li ng-if="resource.provider.description"><span class="hr"></span></li>
+                                                                            <li ng-if="resource.provider.description" ng-bind="resource.provider.description" class="tooltip-bio-description"></li>
+                                                                            <li class="btns">
+                                                                                <a href="#" class="btn btn-follow not-hide-tooltip {{resource.provider._id}}" ng-class="providers && providers.indexOf(resource.provider._id) != '-1' ? 'following' : ''" ng-click="followProvider($event, resource.provider)">
+                                                                                    <span class="follow-text" ng-bind="providers && providers.indexOf(resource.provider._id) != '-1' ? 'following' : 'follow'"></span>
+                                                                                    <img src="/images/checkmarkIcon.png" width="13" height="9" ng-show="providers && providers.indexOf(resource.provider._id) != '-1'"></span>
+                                                                                </a>
+                                                                                <a ui-sref="provider({slug: resource.provider.slug})" ng-click="mixpanelTrack('Page: Provider Detail', {provider: resource.provider.name, origin: 'collection'});" class="btn btn-go">&nbsp;</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>       
+                                                                    <div class="pull-right price" ng-bind="(resource.score | roundNumber) + ' XP (' + resource.type.name.slice(0, - 1) +')'"></div>
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                            </div>
+                                                            <footer class="clearfix">
+                                                                <a herf="#" class="pull-left skill {{skill._id}}"
+                                                                   ng-repeat="(skillindex, skill) in resource.skills track by $index"
+                                                                   ng-if="skillindex < 5"
+                                                                   ng-class="interestsIds && interestsIds.indexOf(skill._id) != '-1' ? 'following' : ''"
+                                                                   ng-bind="skill.name.replace(' ', '&nbsp;')"
+                                                                   ng-click="registerSkillSingle(skill, 'CollectionDetail');"></a>
+                                                            </footer>
+                                                        </article>
+
+
+                                                    </section>
+
+                                                    <button class="my-skill-arrow-left" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" ng-show="listChapter.length > pageSize">
+                                                    </button>
+                                                    <button class="my-skill-arrow-right" ng-disabled="currentPage >= listChapter.length/pageSize - 1" ng-click="currentPage=currentPage+1" ng-show="listChapter.length > pageSize">
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="my-skills-background" ng-show="skillactiveLucy">
+
+                                    <img class="hidden-xs" width="1003" src="images/back1.png">
+
+                                    <div class="my-skill-alert">
+                                        <img class="my-skills-lucy-image" src="images/lucyProfile.png">
+                                        <p>
+                                            Start visualizing your learning by adding your skills to
+                                            your profile manually, or completing resources for any skill!
+                                        </p>
+
+                                        <div class="my-skill-button-group">
+                                            <a ui-sref="explore" class="btn btn-primary my-skills-button gris">
+                                                Explore
+                                            </a>
+                                            <a ng-click="addSkills(getSkills)" class="btn btn-primary my-skills-button blue">
+                                                Add Skills
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-skills-background" ng-show="skillactiveContent">
+                                    <img class="hidden-xs" width="1003" src="images/back1.png">
+                                    <div class="my-skill-alert">
+                                        <img class="my-skills-lucy-image" src="images/lucyProfile.png">
+                                        <p>
+                                            I see you've added Skills to your Profile. Awesome! To start
+                                            training them, start marking content as Complete throughout Skill Club.
+                                        </p>
+
+                                        <div class="my-skill-button-group">
+                                            <a ui-sref="explore" class="btn btn-primary my-skills-button blue">Explore</a>
+                                            <a ng-click="importContent()" class="btn btn-primary my-skills-button blue">Import Content</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="my-skills-manual" ng-show="skillactiveManual">
+                                    <p class="my-skills-text">Also Knows...</p>
+                                    <div class="my-skills-tags" ng-repeat="(value, item) in manual track by $index">
+                                        <a ui-sref="topic({slug:item.skill.slug})">{{item.skill.name}}</a>
+                                        <span class="btn-close" ng-click="removeMySkill($index, item.skill._id, item.skill.name)" ></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </tab>
+                
+                <tab heading="Collections" ng-click="viewCollections()">
+                    <section class="content-wrapper clear" ng-init="find()">
+                        <section class="block-circle">
+                            <div class="content collect-profile-one">
+
+                                <section class="content-body-skills" ng-show="collections.length > 0">
+                                    <section class="topics width-total">
+                                        <div class="row">
+
+
+                                            <section class="col-xs-480 col-xs-6 col-sm-4 col-md-3 padding-8px"
+                                                     ng-repeat="(key, item) in collections track by $index">
+
+                                                <div class="{{item._id}} interest">
+
+                                                    <a class="collections-me"
+                                                       ng-style="{'background-image' : item.image }"
+                                                       title="{{item.title}}" ui-sref="userCollection({username: user.username, slug: item.slug})" ng-click="mixpanelTrack('View Collection Detail', {collection: item.title, origin: 'profile'});">
+                                                        <span class="layer-collection-one"></span>
+                                                        <span class="layer-collection-table">
+                                                            <span class="link linked">
+                                                            {{item.title}} <br/>
+                                                            <span class="resources-length-item">{{item.resources.length}} {{item.resourceTexto}}</span>
+                                                             </span>
+                                                        </span>
+
+                                                    </a>
+
+                                                    <div class="other_methods">
+                                                        <span class="action-icon ileft">
+                                                          <img src="../images/VisibilityIconwhite.png">
+                                                            <span ng-bind="item.public ? 'PUBLIC' : 'PRIVATE'"></span>
+
+                                                        </span>
+                                                        <span class="action-icon icenter"
+                                                              ng-click="openEditModal(item)">
+                                                          <img src="../images/editIconwhite.png">EDIT
+                                                        </span>
+                                                        <span class="action-icon iright"
+                                                              ng-click="openShareUserCollection($event, item, user.name)">
+                                                          <img src="../images/share-icon.png">SHARE
+                                                        </span>
+                                                    </div>
+                                                    <span ng-if="!item.favorites" class="btn-close"
+                                                          ng-click="openAlert($index, item._id)"></span>
+
+                                                </div>
+                                            </section>
+                                        </div>
+
+                                    </section>
+                                </section>
+
+
+                                <br/>
+                                <span class="clearfix"></span>
+
+                                <div class="row" style="text-align: center;">
+                                    <a ng-click="openStoreModal()"
+                                       class="btn btn-primary btn-skillclub-form btn-skillclub-radius">
+                                        Create
+                                    </a>
+                                </div>
+
+                                <span class="clearfix"></span>
+
+                                <div class="content-empty text-center" ng-if="collections.length === 0">
+                                    <p style="margin-top: 8.5%;">
+                                        You haven't created any collections yet.</p><br>
+                                </div>
+
+                            </div>
+                        </section>
+                    </section>
+                </tab>
+
+                <tab heading="Interests">
+                    <section class="content-wrapper clear">
+                        <section class="block-circle">
+                            <div class="content">
+                                <section class="content-body-skill" ng-show="interests.length > 0">
+                                    <section class="topics width-total">
+                                        <div class="row">
+                                            <!--Start: ng-repeat List Skills Interests-->
+                                            <section class="col-xs-480 col-xs-6 col-sm-4 col-md-3 padding-15px"
+                                                     ng-repeat="(key, item) in interests track by $index">
+                                                <div class="{{skill._id}} interest">
+                                                    <a ui-sref="topic({slug:item.skill.slug})" ng-if="!item.skill.image"
+                                                       ng-style="{'background-image' :  imageRand}"
+                                                       title="{{item.skill.name}}" ng-click="trackTopic('Profile')">
+                                                        <div class="overlay-image"></div>
+                                                        <span class="link">{{item.skill.name | limitTo: 15}}{{item.skill.name.length <= 15 ? '' : '...'}}</span>
+                                                        <span class="hover"></span>
+                                                    </a>
+                                                    <a ui-sref="topic({slug:item.skill.slug})" ng-if="item.skill.image"
+                                                       style="background-image:url('{{item.skill.image}}')"
+                                                       title="{{item.skill.name}}" ng-click="trackTopic('Profile')" class="bg-image-sizecover">
+                                                        <span class="backdrop-overlay"></span>
+                                                        <div class="overlay-image"></div>
+                                                        <span class="link">{{item.skill.name | limitTo: 15}}{{item.skill.name.length <= 15 ? '' : '...'}}</span>
+                                                        <span class="hover"></span>
+                                                    </a>
+                                                    <span class="btn-close"
+                                                          ng-click="removeInterest($index, item.skill)"></span>
+                                                </div>
+                                            </section>
+                                            <!--End: ng-repeat List Skills Interests-->
+                                        </div>
+                                    </section>
+                                </section>
+                                <span class="clearfix"></span>
+
+                                <div class="content-empty text-center" ng-if="interests.length == 0">
+                                    <p style="margin-top: 8.5%;">You aren't following any Interests.</p><br>
+                                    <a ui-sref="topics" class="circles-link button text-center">Browse Topics</a>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </tab>
+
+            </tabset>
+            <!--end: New Tabs-->
+        </section>
+        <!-- </section> -->
+
+
+    </section>
+</div>

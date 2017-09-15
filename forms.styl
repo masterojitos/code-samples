@@ -1,0 +1,486 @@
+@import colors
+ 
+formColor= #1e8fc6
+h_input = 2.35em
+
+
+.form-1, .form-2
+    & .grid-3 input[type="checkbox"] + label,
+    & .grid-2 input[type="checkbox"] + label,
+    & .grid-1 input[type="checkbox"] + label,
+    & .grid-3 input[type="radio"] + label,
+    & .grid-2 input[type="radio"] + label,
+    & .grid-1 input[type="radio"] + label
+        max-width: calc(100% - 2em)
+        vertical-align middle
+        margin 0.4em auto
+        line-height 1.15em
+        word-wrap break-word
+    & input[type="file"]
+        padding 0
+        height 2.1em
+        box-sizing content-box
+        overflow hidden
+        cursor pointer
+        myWidthCalc(100% \- 2em)
+        &:before
+            background alertImportant
+            color: #fff
+            border-bottom 0.4em solid alertImportantShadow
+            content: 'subir imagen \e63b'
+            display: block
+            font-family Blim
+            margin: 0
+            height: 1.1em
+            padding: 0.3em
+            position: relative
+            text-align: center
+            width: 100%
+            myTransition(background-color 0.5s ease)
+        &:hover:before
+            background-color alertImportantHover
+.form-1 input[type="file"]
+    height h_input
+    box-sizing content-box
+    overflow hidden
+    cursor pointer
+    width 15.9em
+    &:before
+        padding 0.45em
+.grid-2
+    label
+        width auto !important
+p.grid-2.interest
+    min-width 13.2em
+    margin 0
+.submit
+    background alertSuccess
+    border-radius 0.3em
+    border none
+    padding 0.3em 0.6em
+    color #f 
+    text-decoration none
+    display: inline-block 
+    &:hover
+        background alertSuccess
+        text-shadow 0 0 3px #f
+        text-decoration none
+    &.button
+        color #f
+        font-size 1em
+.submit-warning
+    @extend .submit
+    background alertWarning
+    &:hover
+        background alertWarningHover !important
+.submit-red
+    @extend .submit
+    background alertRed !important
+    box-shadow  0 5px 0 alertRedshadow !important
+    &:hover
+        background alertRedHover !important
+.submit-green
+    @extend .submit
+    box-shadow  0 5px 0 alertGreenHover !important
+    background alertGreen !important
+    &:hover
+        background alertGreenshadow !important
+.submit-orange
+    @extend .submit
+    box-shadow  0 5px 0 alertOrangeHover !important
+    background alertOrange !important
+    &:hover
+        background alertOrangeshadow !important
+.submit-important
+    @extend .submit
+    box-shadow  0 5px 0 alertImportantShadow !important
+    background alertImportant !important
+    border 1px solid transparent !important
+    &:hover
+        background alertImportantHover !important
+.submit-important-min
+    @extend .submit
+    background alertImportant !important
+    &:hover
+        background alertImportant !important
+.reset
+    @extend .submit
+    background alertYellow
+    &:hover
+        background alertYellowHover
+.submit-yellow
+    @extend .submit
+    background alertYellow
+    box-shadow 0 5px 0 alertYellowshadow
+    &:hover
+        background alertYellowHover
+    .button
+        color #fff
+.nav-horizontal .submit
+    @extend .submit
+    border-radius 0
+    padding 0 1em
+.form-1 
+    div, & p
+        margin 1em 0
+    .responsive
+        input
+            width 50%
+        label
+            width 40%        
+    .grid-5 div .profile-img
+        margin-right: 0.6em
+    label
+        background-color #f
+        border solid 1px formColor
+        border-right-style dotted
+        color formColor
+        display inline-block
+        font-weight 400
+        line-height h_input
+        margin-right -0.25em
+        padding-left 0.5em
+        position relative
+        vertical-align middle
+        width 14em
+        myRadius(0.2em 0 0 0.2em)
+        *[class*='icon-']
+            position: absolute;
+            left: 31em;
+            line-height: 2em
+    label:after
+        content ' '
+        display inline-block
+        border-top 0.4em solid transparent
+        border-left 0.5em solid formColor
+        border-bottom 0.4em solid transparent
+        vertical-align middle
+        margin-left 0.5em
+    input,select
+        height h_input
+    input,textarea,select
+        width 15em
+        padding 0 0.5em
+        vertical-align middle
+        box-shadow inset 1px 1px 3px rgba(0,0,0,0.075)
+        border 1px solid formColor
+        color #6
+        font-size 1em
+        myRadius(0 0.2em 0.2em 0)
+    input[type="checkbox"], input[type="radio"]
+        width 1em
+        height 1em
+        :before
+            content ''
+    label + input[type="checkbox"],label + input[type="radio"]
+        width 1em
+        height 1em
+        myTransform(scale(2) translate(.6em, 0em))
+
+    input[type="checkbox"] + label, input[type="radio"] + label
+        border none
+        margin 0
+        width 12em
+        &:after
+            border none
+    textarea
+        vertical-align top
+        min-height 8em
+    fieldset
+        border solid 0.2em formColor
+        overflow: visible
+        margin: 1em 0
+        position relative
+    legend
+        color formColor
+        padding 0 2px 3px 2px
+        font-weight bold
+        font-size 0.8em
+    .ui-spinner
+        border none
+        overflow visible
+    .ui-spinner-input
+        font-size 1em
+        margin 0
+        padding 0.2em 0.5em
+        height 1.75em
+        width 13.6em
+    .ui-spinner a.ui-spinner-button
+        right -1em
+        border 1px solid #ccc
+    .ui-slider
+        width 9em
+        display inline-block
+        position relative
+        left 4em
+        top 1.2em
+    .content-checkbox, #segmentation_interest
+        display inline-block
+        width 14.8em
+        vertical-align top
+        margin-left 1em
+        margin 0 0 0 0.2em
+        border solid 1px #1e8fc6
+        padding 0 0.5em
+    .type_slider
+        position: absolute
+        margin-top: 1.65em
+.form-3
+    div.select-icon select
+        box-shadow inset 1px 1px 3px rgba(0,0,0,0.075)
+        border 1px solid #b
+        color #7
+        padding 0.5em
+        vertical-align middle
+        width 15em
+        myRadius(0 0.2em 0.2em 0)
+        boxSizing()
+    [class^="grid-"], [class*=" grid-"]
+        margin 0
+        text-align left
+    .align-center
+        text-align center
+    .hasDatepicker 
+        margin-right: 0.4em
+    [class^="icon-"]:after, [class*=" icon-"]:after
+        font-size 1.2em
+        line-height 1.2em
+        vertical-align middle
+        color secondColor
+        margin-left: 1em
+    legend 
+        color secondColor
+        padding 0.8em
+        font-size 1.2em
+label.required
+    vertical-align top !important
+.form-2
+    color secondColor
+    label, .label
+        display block
+        margin-top: 1em
+    input[type=radio],input[type=checkbox]
+        width 1em
+        height 1em
+        display inline-block
+        &+ label
+            display inline
+            margin-right 1em
+            font-size 0.9em
+            color firstColor
+    input,textarea,select
+        box-shadow inset 1px 1px 3px rgba(0,0,0,0.075)
+        border 1px solid #b
+        color #7
+        display block
+        padding 0.5em
+        vertical-align middle
+        width 100%
+        myRadius(0 0.2em 0.2em 0)
+        boxSizing()
+    textarea        
+        height 8em
+        resize: none
+    fieldset
+        border 1px solid #d
+        border-radius .3em
+    [type="submit"]
+        @extend .submit
+    [type="reset"]
+        @extend .reset
+    input[type='checkbox']
+        width: 1.2em
+        height: 1.2em
+        display: inline-block
+        & + label
+            display: inline-block
+            width auto
+    & i[class^="icon-"], &  i[class*=" icon-"]
+        width 1em
+        display inline-block
+        text-align center
+    p, div
+        margin 1em 0.3em
+        position: relative
+    [class^="grid-"], [class*=" grid-"]
+        margin 1em 0
+    .upload-thumb
+        position: static
+        max-width: 100%
+        height: auto;
+    .ui-spinner
+        border none
+        width 100%
+        overflow: visible
+        input
+            margin: 0
+    [class^='grid-'] .form-1,[class*=' grid-'] .form-1
+        & label, & input
+            display inline-block
+            margin: 0
+        & label
+            width 37%
+            margin-right: -0.5em
+        & input
+            width 57%    
+.form-3
+    p, div
+        margin 1em 0.3em
+        position: relative
+        color firstColor
+    input, select, textarea
+        color secondColor
+        
+
+.upload-info
+    display block
+    margin: 0
+    vertical-align top
+    position: relative
+    ul
+            margin: 0
+            float left
+    li
+        max-width: 15em
+        word-wrap: break-word
+
+.upload-thumb
+    border 1px solid #1e8fc6
+    border-radius 4px
+    left: 2.5em
+    max-width 12em
+    max-height 8em
+    overflow hidden
+    vertical-align top
+
+.ajax-form
+    display none
+.sidebar-2
+    img,[class^='submit'],[class*=' submit'], .label, label
+        display block
+        width 100%
+.button
+    color #fff
+    margin 5px
+    text-align center
+    transition background-color 0.2s ease 0s
+    min-width 8em
+.button.bold
+    font-weight bold
+.button-box
+    display inline-block
+    min-width 140px
+    text-align right
+    vertical-align top
+.ui-accordion
+    fieldset
+        border none
+        margin 0
+        padding 0
+    div
+        margin 0
+        padding 0.2em
+        border-radius: 0;
+    & .ui-accordion-header
+        color #f
+        display block
+        box-sizing border-box
+        width 100%
+        background-color firstColor
+        border-radius 0
+        font-weight 400
+        &.ui-accordion-header-active,&:hover
+            background-color secondColor
+.ui-datepicker 
+    background: #64c7f4
+    color: #4
+    font-size 0.9em 
+    z-index 10000 !important
+    table
+        background-color: #eee
+        td
+            background #eeeee
+            background -moz-linear-gradient(-45deg,  #eeeeee 0%, #cccccc 100%)
+            background -webkit-gradient(linear, left top, right bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc))
+            background -webkit-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%)
+            background -o-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%)
+            background -ms-linear-gradient(-45deg,  #eeeeee 0%,#cccccc 100%)
+            background linear-gradient(135deg,  #eeeeee 0%,#cccccc 100%)
+            text-shadow 1px 1px 1px #555
+            font-size 0.9em
+            a
+                color: #4 
+#dialog-modal
+    form
+        background-color transparent
+        height 100%
+        fieldset 
+            overflow auto
+            margin 0
+    .alert-warning + form
+        height 92%
+        myHeightCalc(100% - 3.3em)
+    .overlay
+        position absolute
+        display block
+        opacity 0.8
+        background #e
+        top 0
+        left 0
+        width 100%
+        height 96%
+.ui-dialog-buttonpane
+    background-color transparent
+    // .form-2 .formError
+    //     left 0 !important
+[type="submit"]
+    @extend .submit
+[type="reset"]
+    @extend .reset
+// input[required]    
+//     position relative
+//     padding-left 1.5em
+//     &:before
+//         content '(*)'
+//         position absolute
+//         left .4em
+input[type="checkbox"][required] , input[type="radio"][required] 
+    &:before
+        content ''
+    + label:before
+        content '(*)'
+        
+#content .formError, .formError
+        z-index: 90;
+        margin-top: -3em !important
+        font  400 1rem Lato
+        width: 10em
+        animation( 0.3s ease-out 0s normal none 1 fade)
+        &:before
+            content: '\e6be'
+            display: inline-block
+            font-family: Blim
+            position: absolute
+            left: 0.7em
+            font-size: 1.6em
+            color: errorColor
+            bottom: -0.6em
+        .formErrorContent
+            display: inline-block
+            margin: 0
+            color: errorColor
+            border: 2px solid errorColor
+            padding: 0.2em 0.4em
+            border-radius: 0.5em
+            background: #FD
+            text-align: left
+        .formErrorArrow
+            display none
+#content .form-1, .form-1
+    .formError
+        width  32.3em
+#content .form-2, .form-2
+    .formError
+        myWidthCalc(100% \- 1.6em)
+#content p.formError
+    top -2.3em !important

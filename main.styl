@@ -1,0 +1,1409 @@
+@import colors
+@import table
+a
+    color acolor
+    text-decoration none
+    cursor: pointer
+    &[class^="icon-"]:before, &[class*=" icon-"]:before
+        padding-right 0.2em
+    &:hover
+        text-decoration underline
+article, body,div,footer,header,p,section,nav,a
+    box-sizing border-box
+    -moz-box-sizing border-box 
+
+article,form,.box
+    -moz-box-sizing border-box
+    background-color articleBGC
+    border none
+    border-radius 5px
+    box-sizing border-box
+    min-width 260px
+    padding 0.4em 
+    padding 1em
+    width 100%;
+    form
+       box-shadow none 
+       border none 
+.box
+    margin .5em auto
+body, html
+    height 100%
+    padding 0
+    margin 0
+    //min-width 22em
+
+body
+    background-color bgbody
+    font-family Lato
+    font-weight 300
+    // overflow hidden
+img
+    max-width 100%
+h1,h2,h3,h4 
+    font-weight 300
+    margin 0.2em 0 0 0
+    color: #6
+    +section
+        padding 0
+    +.toolbar
+        float right
+        position relative;
+        padding 0
+    a
+        color firstColor
+        display inline-block
+        width auto
+        height 100%
+        text-decoration none
+    a:hover
+        text-shadow 0px 0px 4px #f
+        color secondColor
+        text-decoration underline
+h1, .h1
+    font-size 2em
+    min-width 12em
+    margin-bottom 6px
+    font-weight 300
+    +.toolbar
+        font-size: 0.8em
+        margin -2em 0
+        height 2em
+        font-weight: 400;
+h1.h1-top
+    height 3em
+h1.h1-top span:first-child
+    margin-bottom -0.2em
+h2, .h2
+    font-size 26px
+    margin-bottom 0.6em
+    color #6
+    span.h-title
+        display inline-block
+        margin-top 0.5em
+        vertical-align top
+    +.toolbar
+        margin -2em 0
+        height 2em
+h3, .h3
+    font-size 1em
+    + .toolbar
+        margin -1.5em 0
+        height 1.6em
+        li a
+            height 94%
+            width 1.6em
+            font-size 0.94em
+            [class^='icon-']
+                line-height 1.8em
+                margin-left: -0.4em;
+
+h4, .h4
+    font-size .8em
+h1.icon-tag:before,
+h1[class^="icon-"]:before, h1[class*=" icon-"]:before,
+h2[class^="icon-"]:before, h2[class*=" icon-"]:before,
+h3[class^="icon-"]:before, h3[class*=" icon-"]:before,
+h4[class^="icon-"]:before, h4[class*=" icon-"]:before,
+.h1[class^="icon-"]:before, .h1[class*=" icon-"]:before,
+.h2[class^="icon-"]:before, .h2[class*=" icon-"]:before,
+.h3[class^="icon-"]:before, .h3[class*=" icon-"]:before,
+.h4[class^="icon-"]:before, .h4[class*=" icon-"]:before
+    display inline-block
+    font-family Blim;
+    font-size 0.8em
+    height 100%
+    margin 0 0.2em 0 0
+    padding 0.4em
+    text-align center
+    width 1.2em
+h1[class^="icon-"], h1[class*=" icon-"],
+h2[class^="icon-"], h2[class*=" icon-"],
+h3[class^="icon-"], h3[class*=" icon-"],
+h4[class^="icon-"], h4[class*=" icon-"],
+.h1[class^="icon-"], .h1[class*=" icon-"],
+.h2[class^="icon-"], .h2[class*=" icon-"],
+.h3[class^="icon-"], .h3[class*=" icon-"],
+.h4[class^="icon-"], .h4[class*=" icon-"]
+    display block
+    padding 0 0 1px
+    font-weight 300
+    margin-bottom 0;
+    font-family Lato
+
+header
+    height 6%
+    min-height 2.8em
+    background-color firstColor
+    img
+        max-height 100%
+        width auto
+    .nav
+        display block
+        vertical-align top
+        a
+            font-family Lato
+    .navfist-child
+        width 79%
+    .sidebar
+        text-align center
+        background-color firstColor
+        a
+            position relative
+    .nav-horizontal
+        margin: 0
+figure 
+    img
+        max-width: calc(98% - 1px);
+        vertical-align: middle;
+    a:before
+        content: close-quote
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+
+img
+    &.push-left
+        margin 0 0.5em 0 0
+nav.sidebar
+    color bgcolor
+    position: relative
+    a
+        padding 0.5em 1em
+    a:hover
+        background-color sidebarColorHover
+    *[class^="icon-"], *[class*=" icon-"]
+        display inline-block
+        margin-right 0.5em
+        width 1em
+    li:hover
+        background-color transparent
+    li
+        margin 0
+        position relative
+        hr
+            margin: 1em 15%;
+    article:after
+        display block
+        content ''
+        clear both
+    articlefirst-child
+        border-top none
+    .submit
+        width 98%;
+        margin 1%
+        &:hover
+            background-color alertSuccessHover
+section
+    .nav-horizontal
+        color #4
+        a
+           color #4  
+        li:hover
+            background-color #8
+            a
+               color #f
+        li
+            myTransition()
+            a
+                color #4
+.upload-info
+    text-align center
+    width 97%
+    img
+        display inline-block
+        position static !important
+        vertical-align top
+        margin 0.5em 0 0 0
+    ul
+        display none !important
+    div.verybig_image
+        display inline
+.form-1 div.upload-info
+    text-align right
+
+#nav-metricas > li
+    background rgba(71,172,219,0.8)
+    box-shadow 0 0 1px 0 rgba(71,172,219,0.8)
+    &:hover
+        background #3196C5
+#toolbar-user-points, .table
+    .dropdown
+        left: -5.8em
+.empty-page
+    background-color #FFFFFF
+    border-radius 0.5em 0.5em 0.5em 0.5em
+    padding 1em
+    width 95%
+    margin 0 auto
+.chart
+    display block
+    min-height 400px
+    height 100%
+    margin 0 auto
+.hide
+    display none !important
+.tag 
+    background-color rgba(0,0,0,0.10)
+    border-radius 1em
+    color firstColor
+    display inline-block
+    font-weight 400
+    text-align center
+    padding 0.2em 0.4em
+    z-index 10
+    vertical-align middle
+    box-sizing border-box
+    font-size 0.8em
+    margin 0.2em
+
+figure.perfil
+    display inline-block
+    margin 0.4em
+    position relative
+    text-align center
+    width 4.3em
+    img
+        border-radius 50%
+        position relative
+        width 90%
+        z-index 2
+    .tag
+        background-color rgba(79,173,254,0.9)
+        bottom 9%
+        font-size 0.8em
+        left -4px
+        padding 0
+        position absolute
+        right 0
+        width 100%
+        z-index 3
+        color #f
+    .tooltip
+        display none
+    &:hover .tooltip
+        display block
+        background-color rgba(38, 158, 214, 1)
+        top 2.5em
+        padding 0.5em
+        width auto
+        z-index 1000
+        left 0em
+        color #fff
+        font-weight bold
+        max-width 6em
+        overflow hidden
+#content
+    height 94%
+    // overflow hidden
+    position: relative
+    .content
+        // overflow auto
+        // myTransition()
+        height auto
+        padding 1em 0
+        
+    .company_title.icon-bullhorn:before
+        height: 0.8em;
+        font-size: 2.5em;
+        position: relative;
+#content.container-fluid.height-auto
+    height auto
+#title-site
+    overflow hidden
+    background-color secondColor
+    &.hide-sidebar
+        a
+            display inline-block
+            width 30px
+            dropShadow(1px 1px 2px #F5F7E5)
+            img
+                myTransition(opacity .8s ease)
+                opacity 0
+        a:hover
+            dropShadow(1px 1px 8px #F5F7E5)
+    a
+        background-size: 30px 30px
+        height 35px
+        margin-top 1%
+        img
+            opacity 1
+            height 30px
+            margin 4.5% auto
+            myTransition(opacity .8s ease)
+            dropShadow(1px 1px 2px #F5F7E5)
+    a:hover img
+        dropShadow(1px 1px 8px #F5F7E5)
+    .background
+        text-align center
+.content 
+    h2
+        &[class^="icon-"]:before, &[class*=" icon-"]:before
+            font-size: 2em
+            padding: 0.2em 0.1em
+    .ui-panel-display-reveal,.ui-panel-position-right.ui-panel-display-reveal
+        box-shadow: 
+            0px 0px 0px 4px #5c5f64, 
+            0px 0px 0px 5px #fff, 
+            0px 0px 0px 9px #5c5f64, 
+            0px 0px 12px 16px #D1F0FC
+        border: none
+        z-index: 100
+        transition: all .8s ease
+ /*   
+    .tabs
+        position relative
+        > ul
+            position absolute
+            right 0
+            top -4.62em
+            border-bottom 0
+            li
+                background #d
+                margin: 1px 0.2em
+                a
+                    color #36A9E1
+                    font-family Lato
+            li.ui-state-active
+                background #f
+                margin: 1px 0.2em
+                */
+
+.ui-dialog
+    background #e
+.ui-front
+    z-index 1000
+.align-center
+    text-align center
+    margin 0 auto
+.avatar
+    overflow hidden
+    border-radius 50%
+.clearfix:after
+    display block
+    content ''
+    clear both
+.list
+    padding 0.6em
+    article
+        box-shadow none
+        border none
+        padding 1em 0
+        img
+            border 1px solid #c
+        img:hover
+        h3
+            margin 0
+            height auto
+            .push-right
+                margin-top 0.2em;
+    article:first-child
+        border-top none
+    tbody
+.columns-2
+    columns(2)
+    &.push-bottom
+        width: 135%
+    article,li
+        border none
+        background-color #e
+        display inline-block
+        margin 0.5em 0
+        padding 0
+        position relative
+        overflow visible
+        boxShadow(2px 0 2px #a)
+        div,img
+            display inline-block
+            vertical-align middle
+            float none
+            margin 0.5em
+        p
+            margin 0
+        div 
+            width 70%
+            width calc(100% - 40px - 2.5em)
+
+    article
+        padding 0.5em 0
+    p
+        margin 0.3em
+.flash-success
+    background-color alertSuccess
+    color #fff
+    font-weight bold 
+    margin 0
+    padding 0.5em
+    position absolute
+    text-shadow 1px 1px 3px #ccc
+    text-align left
+    top -30% 
+    width 100%
+    z-index:  10000    
+    animation(auto_hide 10s linear 1s 1 normal)
+    &:before
+        font-family Blim
+        background-color alertSuccessHover
+        content "\e604"
+        text-shadow none
+        color #f
+        height: 1.75em;
+        display: inline-block;
+        margin: 0 0 -1em 0;
+        font-size: 1.4em;
+        top: -0.6em;
+        position: relative;
+        left: -0.4em;
+        vertical-align: middle;
+        padding-top: 0.7em;
+        width: 1.8em;
+        text-align: center;
+[class^='alert-'], [class*=' alert-']
+    color #f
+    text-shadow 0 0 3px #c
+
+.alert-warning
+    color  errorColor
+    font-size 1.2em
+    font-weight 300
+    padding 0.6em
+    border 0.2em solid
+    border-radius 0.4em
+    animation(show 0.3s ease 0s 1 normal)
+    &:before
+        font-size: 3em;
+        margin: 0 0.5em 0 -0.1em;
+        padding: 0.15em;
+        vertical-align: middle;
+        font-family Blim
+.alert-important
+    @extend .alert-warning
+    background-color alertImportant
+.alert-important[class^="icon-"]:before,.important[class*=" icon-"]
+    background-color  #AC8028
+.alert-success
+    @extend .alert-warning
+    color  #f
+    background-color alertSuccess
+    &:before
+        background-color alertSuccessHover
+        content "\e604"
+        color #E2FCE3
+.alert-success[class^="icon-"]:before,.success[class*=" icon-"]
+    background-color #417A27
+.flash-success.alert-success
+    background-color alertSuccessOpacity()
+.message-info, .message
+    @extend .alert-success
+    border 0.2em solid firstColor
+    border-radius 0.6em
+    background-color transparent 
+    color #5
+    font-size: 1em
+    font-weight 400
+    min-height 4em
+    padding-left: 3.5em;
+    position: relative;
+    h3
+        font-size 1.4em
+.message-info
+    &:before
+        background-color transparent
+        content "\e900"
+        color secondColor
+        float: left
+        position: absolute
+        left: 0em
+        top: 50%
+        margin-top: -0.75em
+.message
+    padding-left: 1em;
+    &:before
+        display none
+.grid
+    margin 0%
+    padding 0%
+    height 100%
+[class^="grid-"],[class*=" grid-"]
+    display inline-block
+    margin 0
+    padding 0.5em 0.5em
+    box-sizing border-box
+    -moz-box-sizing border-box
+    vertical-align top
+    h1,h2,h3,h4
+        overflow hidden
+    pfirst-child
+        margin 0
+[class^="panel-"],[class*=" panel-"]
+    [class^="grid-"], [class*=" grid-"]
+        article
+            margin-bottom 1em
+    & .list
+        overflow-y auto
+        height 100%
+h2.icon-question
+    margin 0
+    font-size 1.35em !important
+.grid-1
+    width 9%
+.grid-2
+    width 18.5%
+.grid-3
+    width 28.9%
+.grid-4
+    width 39%
+.grid-5
+    width 49%
+    margin 0.2%
+.grid-6
+    width 59%
+.grid-7
+    width 69%
+.grid-8
+    width 79%
+.grid-9
+    width 89%
+.grid-10
+    width 99%
+.content .grid-center
+    text-align  center
+    width 100%
+    & [class^="grid-"], & [class*=" grid-"]
+        margin 0 auto
+        text-align left
+// .message
+//     background-color alertYellow
+//     color #f
+//     padding 0.5em
+//     font-weight bold
+//     a
+//         color #f
+//         text-decoration none
+//     a:hover
+//         text-shadow 1px 1px 3px #f
+//         text-decoration underline
+//     &[class^="icon-"]:before ,&[class*=" icon-"]:before
+//         background-color alertYellowHover
+//         text-align center
+//         width 1.5em
+//         display inline-block
+.panel-campaigns
+    h3
+        .submit
+            font-size 0.8em
+            margin 0
+    article
+        padding 0.5em 0.5em 3em 0.5em
+        position: relative
+        border-radius: 0
+
+    .push-bottom
+        bottom 0.5em
+        width 98%
+.panel-top_influencers
+    min-width 238px
+    position relative
+    article
+        text-align center
+input.category_valid
+    position absolute
+    left 2em
+    bottom 0
+.nav
+    margin 0
+    padding 0
+    text-align center
+    li
+        list-style none
+        padding 0 1em
+        myTransition( all 0.4s ease )
+        ul
+         padding 0 1em 1em
+        & a:hover
+            background-color secondColor
+            color bgcolor
+            text-shadow 0 0 3px navTextShadow
+    a
+        display inline-block
+        color bgcolor
+        text-decoration none
+        width 100%
+        height 100%
+        line-height: 2.6em
+        myTransition( all 0.4s ease )
+    *[class^="icon-"], *[class*=" icon-"]
+        margin-right 0.2em
+    p
+        margin 0
+        padding 0
+    .divider
+        border-top 2px groove #fff
+        height 2px
+        margin 0.5em 0
+.nav, body
+    .jm-panel
+        .jm-close
+            position absolute
+            height 3em
+            padding 1em .1em
+            width 1em
+            margin 0
+            min-width 0
+            line-height 1.2em
+            text-align center
+            background-color #B1B1B1
+            top calc( 50% - 1em)
+            left -1em
+            color #5c5f64
+            box-shadow -2px 0 4px #888
+            &:before
+                padding 0
+                margin -.3em 0 0
+                font-family Blim
+                content '\e64f'
+            &[data-position="left"]
+                right -1em
+                &:before
+                    content '\e64e' 
+        li
+            display block
+            min-width 8em
+            a
+                &:hover
+                    background-color #D
+.ui-checkbox-on, .ui-checkbox-off
+    & + input[type='checkbox']
+        display none              
+.nav-horizontal li a:hover
+    a
+        background-color secondColor
+.nav-horizontal 
+    line-height 250%
+    text-align left
+    height 100%
+    color #f
+    & li:hover
+        background-color transparent
+            a
+                background-color secondColor
+    & li
+        display inline-block
+        height 100%
+        box-sizing border-box
+        padding 0
+        margin 0 0.5em
+        vertical-align top
+        a
+            padding 0 1em
+            width auto
+            myTransition( all 0.4s ease )
+        li a
+            width 100%
+    &.pull-right .dropdown-toggle .dropdown
+        right 0
+        left auto
+        &:after
+            right: 30% 
+
+.navbar-text
+    * 
+        vertical-align middle
+    img
+        max-height 2em
+        max-width 2em
+
+.nav-content
+    margin -2em -2.5em 2em
+    background-color #8
+    text-align right
+    font-size .85em
+    padding: 0 1em
+    li
+        display inline-block
+        padding: 0.4em 0
+        margin: 0 -0.2em 0 0
+        a
+            color #f
+            padding 0.2em 0.8em
+            border-left 1px solid #f
+            line-height 1.2em
+        a:hover,
+        .active
+            background-color #a
+            text-shadow  0 0 3px #fff
+    li:first-child a
+        border-left none
+.dropdown, .nav-horizontal .dropdown
+    display none
+    background-color articleBGC
+    color sidebarColor
+    position absolute
+    padding 0
+    border 1px solid sidebarColor
+    border-top-width 0.8em
+    left 0
+    width 15em
+    z-index 120
+    li
+        display block
+        margin 0
+        padding 0 1em
+        myTransition(all .2s linear)
+        a
+            color sidebarColor
+            width 100%
+            height 100%
+            background-color transparent
+    li:hover
+       background-color thirdColor 
+       a
+        color bgcolor
+.dropdown-toggle, .dropdown
+    span,& strong
+        vertical-align middle
+.dropdown-toggle
+    position relative
+    li a
+        padding 0
+    &:hover, &:focus     
+        .dropdown
+            display block
+        .dropdown:after
+            font-family Blim;
+            position absolute
+            color sidebarColor
+            content: "\e6c5"
+            top: -1.96em
+            right 50%
+.nav-panel
+    text-align left
+    padding 0.7em
+    margin 0
+    li
+        display block
+        a
+            color sidebarColor
+            display inline-block
+            font-family Lato
+            font-weight normal
+            padding 0.5em
+            text-decoration none
+            width 100%
+        a:hover 
+            color #f
+            background-color fourthColor
+        [class^='icon-']
+            margin-right 0.5em
+            &:before,&:after
+              width 1.5em
+              text-align center
+.campaign-thumbnail
+    display inline-block
+    max-width 80px
+    max-height 80px
+    width 80px
+    height 80px
+.sidebar
+    position relative
+    background-color sidebarColor
+    display inline-block
+    height 100%
+    width 15%
+    vertical-align top;
+    z-index 100
+    myTransition()
+    .nav
+        text-align left
+        li
+            margin 0
+            padding 0
+            ul
+                width 100%
+                padding 0
+                li
+                    margin 0.5em 0
+                    a
+                        padding 0.5em 0 0.5em 1em
+                        line-height 1.2em
+
+        a
+            padding 0.5em 0 0.5em 0.5em
+            & *[class^="icon-"], & *[class*=" icon-"]
+                vertical-align middle
+            .tooltip
+                display inline-block
+                font-size 0.9em
+                height auto
+                position: relative
+                vertical-align middle
+                width calc( 100% - 3em )
+
+        .active
+            background-color #4
+            ul
+                display block
+                .active
+                    background-color #000000
+    + .content
+        display inline-block
+        height 100%
+        width 84%
+        myTransition()
+.nav-accordion
+    li
+        ul
+            display none
+    a
+.hide-sidebar + .content
+    width 95.5%
+.tooltip
+    display inline-block
+    height 1em
+    width 85%
+    opacity 1
+    position absolute
+    myTransition(opacity 0.5s ease 0.8s)
+    a
+        position relative
+        display inline-block
+        .tooltip-top
+            opacity 0
+            position absolute
+            height 0%
+            overflow hidden
+            top: -109%
+            right: -50%
+            myTransition(all 0.2s ease 0.8s)
+            span
+                display inline-block
+                padding 0.2em 0.5em
+                background-color bgTooltip
+                boxShadow(0 0 3px #3)
+    &:hover
+        .tooltip-top
+            opacity 1
+            height 100%
+            span    
+
+.pagination
+    text-align: center
+    ul
+        padding: 0
+        border 1px solid #a
+        display: inline-block
+        margin 1em auto
+        myRadius(0.4em)
+        overflow hidden
+        vertical-align top
+        li
+            background-color #fff
+            display block
+            float left
+            border-left 1px solid #a  
+            a
+                width auto
+                color #3
+                float left
+                padding 0.4em 0.6em
+                text-decoration: none
+            a.changeable:hover,.active, .active a
+                color: #F;
+                background-color: firstColor;
+                text-shadow: 0 0 4px #f;
+        li:first-child
+            border-left none
+    ul:after
+        content ' '
+        display block
+        clear both
+    .itemsxpage
+        display inline-block
+        margin 1em
+        min-width 10em
+        padding 0.4em
+        text-align left
+        width 22%
+        cursor default
+        ul
+            height 2em
+            margin -0.3em 0 0 0
+            text-align center
+            width 3em
+            li
+                padding-top 0.35em
+                ul
+                    myTransition(all .20s ease)
+                    border-left 0px
+                    border-top 0px
+                    border-right 0px
+                    display inline-block
+                    height 2em
+                    margin-top 0.2em
+                    opacity 0
+                    visibility hidden
+                    width 3em
+                    li
+                        border 1px solid #EFEFEF
+                        width 3em
+                        a
+                            cursor pointer
+                            max-width 3em
+                            text-align center
+                            width 3em
+        ul:hover
+            height auto
+            li
+                ul
+                    visibility visible
+                    height auto
+                    opacity 1
+                    li
+                        a:hover
+                            background #F7F7F7
+                            color #000
+
+.panel-xl [class^="grid-"],.panel-xl [class*=" grid-"],
+.panel-xl 
+    height 42em
+    & article
+        height 39em
+        overflow auto
+.panel-l [class^="grid-"],.panel-l [class*=" grid-"],
+.panel-l
+    & article
+        height 29em
+.panel-m [class^="grid-"],.panel-m [class*=" grid-"],
+.panel-m
+    min-height 16em
+.panel-s [class^="grid-"],.panel-s [class*=" grid-"], .panel-s
+    min-height 8em
+    & article
+        height 5em
+        overflow auto
+    h3
+        margin-top -0.5em
+        padding: 0
+.panel-24
+    height 24em
+.panel-auto
+    height auto
+    & article
+        height auto
+.panel-fixed
+    position: fixed
+    height: 94%
+    overflow: auto
+    top: 6%
+.panel-total-screen
+    height: 100%
+    overflow: auto
+h2 + .panel-total-screen
+    myHeightCalc(100% - 3.5em)
+h3 + .panel-total-screen
+    myHeightCalc(100% - 2.5em)
+.dialog-modal.submit.toolbar
+    padding 0.1em 0.5em
+    border-radius 0
+    font-size 0.9em
+    margin -1.6em 0
+.push-bottom
+    position absolute
+    bottom 0.5em
+.pull-right,
+.push-right
+    float right
+    margin-right 0.5em;
+.pull-left,
+.push-left 
+    float left
+    margin-left 0.5em;
+    margin-right 0.5em;
+[class^="panel-"],[class*=" panel-"]
+    margin-bottom 1em
+    border-radius 0.2em;
+    h2 + .toolbar
+            float right
+            margin -2em 0
+            height 2em
+            padding 0
+            position relative
+.vertical-align
+    vertical-align middle
+    display inline-block
+    &+span
+        height 100%
+        vertical-align middle
+        display inline-block
+[class^="submit-"],[class*=" submit-"]
+    &:hover
+        text-decoration none
+.toolbar
+    float right
+    li
+        display inline-block
+        height 100%
+        margin-left 0.1em
+        float left
+        .tooltip
+            display none
+        .btn
+            width auto
+            background-color secondColor
+            color #f
+            padding 0 0.3em 0  0
+            font-weight normal
+            & [class^="icon-"],& [class*=" icon-"]
+                margin-right 0.3em
+        .btn-warning
+            background-color alertWarning
+            & [class^="icon-"],& [class*=" icon-"]
+                background-color alertWarningHover
+            &:hover
+                background-color alertWarningHover
+                & .tooltip
+                    background-color alertWarning
+        .btn-important
+            background-color alertImportant
+            & [class^="icon-"],& [class*=" icon-"]
+                background-color alertImportantHover
+            &:hover
+                background-color alertImportantHover
+                & .tooltip
+                    background-color alertImportant
+        .btn-success
+            background-color alertSuccess
+            & [class^="icon-"],& [class*=" icon-"]
+                background-color alertSuccessHover
+            &:hover
+                background-color alertSuccessHover
+                & .tooltip
+                    background-color alertSuccess
+        a
+            background-color secondColor
+            display inline-block
+            height 2em
+            text-decoration none
+            text-align center
+            width 2em
+            position: relative
+            myTransition(all .4s ease)
+        a [class^="icon-"],a [class*=" icon-"]
+            height 100%
+            width 2em
+            color #f
+            line-height 2em
+            color #e
+            vertical-align middle
+            padding 0 0.3em
+            display: inline-block
+        a:hover
+            background-color #1776A5
+            .tooltip
+                opacity 0.9
+                color #f
+                display inline-block
+                top 120%
+                right 40%
+                text-align center
+                background bgTooltip
+                padding 1em
+                line-height 1.2em
+                height auto
+                padding 0.5em
+                position absolute
+                width auto
+                z-index 1000
+            [class^="icon-"],[class*=" icon-"]
+                color #f
+                text-shadow 0 0 3px #f
+.profile-img
+    box-shadow 1px 1px 4px #444
+[class^="panel-h-"]>p,[class*=" panel-h-"]>p
+    margin-top 0
+[class^="icon-"],[class*=" icon-"]
+    & span
+        display none
+    .formError
+        display block
+a.icon-cart
+    font-weight 400
+.ocultar
+    animation(show 2s ease 0s 1 normal)
+.circle_image
+    border-radius 50%
+.strong_title
+    margin 10px
+.div-5
+        width 5%
+.div-10
+    width 10% !important
+.div-15
+    width 15% !important
+.div-20
+    width 20% !important
+.div-25
+    width 25% !important
+.div-30
+    width 30% !important
+.div-33
+    width 33% !important
+.div-35
+    width 35% !important
+.div-40
+    width 40% !important
+.div-45
+    width 45% !important
+.div-50
+    width 50% !important
+.div-55
+    width 55% !important
+.div-60
+    width 60% !important
+.div-62
+    width 62% !important
+.div-65
+    width 65% !important
+.div-70
+    width 70% !important
+.div-75
+    width 75% !important
+.div-80
+    width 80% !important
+.div-90
+    width 90% !important     
+.div-100
+    width 100% !important
+    margin 0.6em 0em   
+.div-responsive
+    display inline-block
+    vertical-align top
+.text-left
+    text-align left !important
+.transparent
+    background transparent
+.text-center
+    text-align center 
+.text-left
+    text-align left
+.text-right
+    text-align right
+.margin-top
+    margin-top 0.5em !important
+.margin-top-medium
+    margin-top 2em !important
+.margin-bottom
+    margin-bottom 0.5em !important
+.margin-left
+    margin-left 0.5em !important
+.margin-right
+    margin-right 0.5em !important
+.mmargin-top
+    margin-top 1em !important
+.mmargin-bottom
+    margin-bottom 1em !important
+.mmargin-left
+    margin-left 1em !important
+.mmargin-right
+    margin-right 1em !important
+.no-bold
+    font-weight 200 !important
+.text-little
+    span
+        font-size 0.8em
+        font-weight 400
+        line-height 1.2em
+.margin-right
+    margin-right 0.5em
+    
+.xdebug-var-dump, pre
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 30%;
+    z-index: 1000;
+    background: rgba(26, 133, 30, 0.85);
+    border: 2px solid #eee;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin 0
+    height 10em
+    overflow auto
+    resize both
+    color: #dff
+    text-align left
+    font
+        color: #FFB82D !important
+.owl-carousel .owl-wrapper-outer
+    left 0.8em !important
+.menu-container
+    ul
+        li
+            a
+                background transparent !important
+                color #36B4E8
+                margin 0 !important
+                padding 0 0.3em !important
+                span
+                    margin-top 0
+            ul
+                myTransition(all .20s ease)
+                background rgba(255,255,255,1) !important
+                border-color #1E8FC6 !important
+                display block !important
+                height 2em
+                position absolute
+                opacity 0
+                overflow-x inherit
+                visibility hidden
+                width 11.5em
+                li
+                    max-height 2.3em
+                    padding 0 0 !important
+                    a
+                        color #000 !important
+        li:hover
+            background transparent !important
+            & >a
+                color #0
+                text-shadow 0 0 1px #6
+            ul
+                height auto
+                max-height 14em
+                overflow-x hidden
+                opacity 1
+                visibility visible
+        .dropdown
+            overflow auto
+.min-morelong
+    min-width 9em !important
+    img
+        max-width 215px
+        margin auto
+.menu-container ul li ul li:hover
+    background #36A9E1 !important
+    a
+        color #fff !important
+        font-weight 400
+footer.faq ul
+    list-style: decimal
+.close:hover
+    cursor pointer
+.record_actions
+    list-style none
+.toolbar.header-icons
+    li
+        height 2.2em !important
+        :hover
+            background-color rgba(255,255,255,1)
+            color #1E8FC6
+.header-icons.toolbar li
+    background-color rgba(255,255,255,0.61)
+    a
+        background-color transparent
+        color #36A9E1
+        margin 0.15em 0 !important
+        padding 0.4em 1em 0
+        width auto !important
+        b
+            font-family Lato
+.toolbar.header-icons > li:first-child
+    border-radius 0.3em 0 0 0
+.toolbar.header-icons > li:last-child
+    border-radius 0 0.3em 0 0
+.toolbar.header-icons-1 > li:last-child
+    border-radius 0.3em 0.3em 0 0 !important
+.dropdown-toggle.money
+    width auto
+    ul.dropdown
+        opacity 0
+        text-align center
+        width 7em
+.dropdown-point
+    color secondColor
+    float right    
+.min-none
+    min-width inherit !important
+.form-1 div.upload-info
+    max-width 30.8em
+    width 98%
+    ul
+        display inline-block
+        float none
+        margin-top 0.5em
+    div.verybig_image
+        text-align center
+        vertical-align top
+        img.upload-thumb
+            max-width 98%
+div.verybig_image
+    text-align center
+.figure_image
+    display inline-block
+    max-width 61px !important
+    max-height 61px !important
+    min-width 61px !important
+    min-height 61px !important
+.small_image
+    display inline-block
+    max-width 80px 
+    max-height 80px
+    min-width 80px 
+    min-height 80px
+.little_image
+    display inline-block
+    max-width  90px 
+    max-height 70px
+    min-width  90px 
+    min-height 70px
+.medium_image
+    display inline-block
+    max-width 120px
+    max-height 80px
+    min-width 120px
+    min-height 80px
+.long_image
+    display inline-block
+    max-width 120px 
+    min-max-height 100px 
+    min-width 120px 
+    height 100px 
+.morelong_short_image
+    display inline-block
+    max-width 140px !important
+    max-height 95px !important
+    min-width 140px !important
+    min-height 95px !important
+.morelong_image
+    display inline-block
+    max-width 140px !important
+    max-height 120px !important
+    min-width 140px !important
+    min-height 120px !important
+.large_image
+    display inline-block
+    max-width 160px !important
+    max-height 120px !important
+    min-width 160px !important
+    min-height 120px !important
+.big_image
+    display inline-block
+    max-width 180px
+    max-height 100px
+    min-width 180px
+    min-height 100px
+.verybig_image
+    display inline-block
+    max-width 230px
+    max-height 140px
+    min-width 230px
+    min-height 140px
+.icon-blue
+    color firstColor
+[unselectable=on]
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor default

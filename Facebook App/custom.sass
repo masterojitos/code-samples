@@ -1,0 +1,392 @@
+@import compass
+$page_width: 790px
+$text-color: #fea200
+$error-color: #fb2600
+body
+    background-color: #fff
+    #boton_que_gano
+        cursor: pointer
+        left: 50%
+        margin-left: ($page_width / 2) - 178
+        position: absolute
+        top: 0px
+        z-index: 4
+.container
+    font-family: 'Calibri'
+    margin: 5px auto 0
+    overflow: hidden
+    position: relative
+    width: $page_width
+    > main
+        background: url(../img/fondo-mesa.jpg) #000
+        height: 709px
+        margin-bottom: 3px
+        overflow: hidden
+        width: $page_width * 4
+        =mesa-roja-cusquena
+            left: 50%
+            margin-left: -196px
+            position: absolute
+            top: -142px
+        =boton-inferior
+            bottom: 15px
+            left: 50%
+            height: 52px
+            margin-left: -68px
+            position: absolute
+            width: 137px
+        section
+            height: 709px
+            display: none
+            float: left
+            position: relative
+            width: $page_width
+            article
+                list-style: none
+                margin: 0 auto
+                margin-top: -1709px
+                input[type=text]
+                    width: 184px
+            &.section-no-fan
+                display: block
+                background-image: url(../img/fondo-no-fan.jpg)
+                article
+                    background-image: url(../img/contenedor-no-fan.png)
+                    background-repeat: no-repeat
+                    display: block
+                    height: 360px
+                    float: none
+                    margin: 0 auto
+                    padding-top: 70px
+                    position: relative
+                    text-align: center
+                    width: 294px
+                .top-logo
+                    left: 35px
+                    position: absolute
+                    top: -150px
+                    width: 250px
+                .mesa-roja
+                    margin-left: -40px
+                footer
+                    border-bottom: 2px solid #fff
+                    border-top: 2px solid #fff
+                    bottom: 45px
+                    color: #fff
+                    font-family: 'BebasNeue'
+                    font-size: 30px
+                    font-weight: 400
+                    left: 50%
+                    line-height: 26px
+                    margin-left: -100px
+                    padding: 12px 0
+                    position: absolute
+                    text-align: center
+                    width: 200px
+                    .enunciado
+                        line-height: 26px
+                div.space
+                    height: 165px
+            &.section-fan
+                display: block
+                article
+                    display: block
+                    margin: 0 auto
+            &.section-fan, &.section-mesa-roja, &.section-inscrito
+                article
+                    background-image: url(../img/contenedor-fan.png)
+                    background-repeat: no-repeat
+                    height: 250px
+                    padding-top: 70px
+                    position: relative
+                    text-align: center
+                    width: 329px
+                .top-logo
+                    +mesa-roja-cusquena
+                footer
+                    +boton-inferior
+                div.space
+                    height: 123px
+            &.section-formulario
+                article
+                    background-image: url(../img/contenedor-formulario.png)
+                    background-repeat: no-repeat
+                    height: 460px
+                    padding-top: 70px
+                    position: relative
+                    text-align: left
+                    width: 430px
+                    .terminos
+                        bottom: 40px
+                        color: $text-color
+                        font-size: 12px
+                        left: 0
+                        position: absolute
+                        text-align: center
+                        width: 100%
+                        div
+                            margin-bottom: 3px
+                        .error
+                            color: $error-color
+                            font-weight: 700
+                        span
+                            color: #fff
+                            margin-right: 5px
+                        a
+                            color: $text-color
+                .top-logo
+                    +mesa-roja-cusquena
+                footer
+                    +boton-inferior
+                div.space
+                    height: 123px
+            &.section-mesa-roja
+                article
+                    color: #fff
+                    z-index: 2
+                .top-logo
+                    top: -20px
+                    z-index: 3
+                footer
+                    margin-left: -145px
+                    text-align: center
+                    width: 290px
+                .cusquena-input
+                    > div
+                        height: 20px
+                        width: 100%
+                        div, input[type=text]
+                            left: 63px
+                            text-align: center
+                .imagen-recuadro
+                    +background-size(100% 100%)
+                    height: 100px
+                    position: absolute
+                    width: 100px
+                    z-index: 1
+                    &.amigo-1
+                        left: 83px
+                        top: 248px
+                    &.amigo-2
+                        left: 264px
+                        top: 248px
+                    &.amigo-3
+                        left: 441px
+                        top: 248px
+                    &.amigo-4
+                        left: 621px
+                        top: 248px
+                    &.amigo-5
+                        left: 83px
+                        top: 501px
+                    &.amigo-6
+                        left: 264px
+                        top: 501px
+                    &.amigo-7
+                        left: 441px
+                        top: 501px
+                    &.amigo-8
+                        left: 621px
+                        top: 501px
+                    a
+                        cursor: pointer
+                        position: absolute
+                        right: -17px
+                        top: -18px
+            &.section-inscrito
+                article
+                    background-image: url(../img/contenedor-fan-inscrito.png)
+                    height: 260px
+                    padding-top: 360px
+                    width: 347px
+                footer
+                    margin-left: -110px
+                    width: 220px
+            &.section-terminos-y-condiciones, &.section-que-gano
+                left: 0
+                position: absolute
+                top: -709px
+            &.section-terminos-y-condiciones
+                background: #000
+                background: rgba(0, 0, 0, 0.93)
+                z-index: 5
+                article
+                    background-repeat: no-repeat
+                    height: 460px
+                    margin: 0 auto
+                    padding-top: 65px
+                    position: relative
+                    text-align: center
+                    width: 510px
+                .top-logo
+                    +mesa-roja-cusquena
+                .scroll
+                    color: #fff
+                    height: 370px
+                    margin: 20px 0
+                    overflow: hidden
+                    padding: 0 20px
+                    text-align: left
+                    width: 470px
+                footer
+                    +boton-inferior
+                div.space
+                    height: 123px
+            &.section-que-gano
+                background: #000
+                background: rgba(0, 0, 0, 0.93)
+                z-index: 5
+                article
+                    background-repeat: no-repeat
+                    height: 300px
+                    margin: 0 auto
+                    padding-top: 65px
+                    position: relative
+                    text-align: center
+                    width: 510px
+                .top-logo
+                    +mesa-roja-cusquena
+                .premios
+                    color: #fff
+                    font-size: 1.2em
+                    margin: 30px auto 0
+                    padding: 0
+                    text-align: left
+                    width: 235px
+                    li
+                        line-height: 24px
+                        list-style: none
+                        margin: 15px 0
+                        span
+                            color: $text-color
+                            font-size: 24px
+                            margin-right: 8px
+                            vertical-align: sub
+                footer
+                    height: 52px
+                    margin: 70px auto 0
+                    width: 137px
+                div.space
+                    height: 123px
+            .cusquena-input
+                height: 22px
+                margin-top: 20px
+                position: relative
+                width: 100%
+                label
+                    color: $text-color
+                    padding-right: 3px
+                    text-align: right
+                    width: 177px
+                    +inline-block
+                > div
+                    position: relative
+                    +inline-block
+                    text-align: left
+                    vertical-align: text-bottom
+                    .border
+                        border: 1px solid $text-color
+                        border-top: 0
+                        bottom: 0
+                        height: 10px
+                        left: 0
+                        position: absolute
+                        width: 192px
+                        &.error
+                            border: 1px solid $error-color
+                            border-top: 0
+                        &.dia, &.mes, &.ano
+                            width: 57px
+                        &.mes
+                            left: 69px
+                        &.ano
+                            left: 137px
+                    input[type=text]
+                        background: transparent
+                        border: 0
+                        bottom: 3px
+                        color: #fff
+                        left: 0
+                        margin-left: 5px
+                        outline: 0
+                        padding-bottom: 1px
+                        position: absolute
+                        z-index: 2
+                        &.dia, &.mes, &.ano
+                            left: 6px
+                            margin-left: 0
+                            text-align: center
+                            width: 47px
+                        &.mes
+                            left: 75px
+                        &.ano
+                            left: 143px
+        .enunciado
+            color: $text-color
+            font-family: 'BebasNeue'
+            font-size: 38px
+            line-height: 30px
+            &.white
+                color: #fff
+            &.little
+                font-size: 30px
+    > footer
+        background-color: #000
+        color: #999
+        width: 100%
+        h3
+            font-family: 'ZURCHLC'
+            letter-spacing: .9em
+            margin: 0
+            padding: 20px 0
+            text-align: center
+        hr
+            border-top: 1px solid #2e2e2e
+            margin: 0 40px 1em
+        img, p
+            +inline-block
+        img
+            margin: 0 20px
+            width: 168px
+        p
+            font-size: .75em
+            width: 558px
+    #boton_regresar
+        float: left
+    .text-center
+        text-align: center
+    .nano
+        .nano-content
+            padding: 10px
+        .nano-pane
+            background: #303030
+        .nano-slider
+            background: #FFA300
+    .check_button
+        border: 1px solid $text-color
+        +inline-block
+        height: 14px
+        margin-right: 5px
+        position: relative
+        width: 14px
+        &.checked
+            &:before
+                color: $text-color
+                content:  "\2713 "
+                font-size: 12px
+                left: 1px
+                position: absolute
+                top: 0
+        &.error
+            border: 1px solid $error-color
+        &:hover
+            cursor: pointer
+    .loading
+        left: 304px
+        position: absolute
+        top: 333px
+        width: 200px
+        z-index: 999
+    .no-link
+        cursor: default
+        text-decoration: none
